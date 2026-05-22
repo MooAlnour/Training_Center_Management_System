@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Training_Center_Management_System.Login;
 
 namespace Training_Center_Management_System
 {
@@ -16,7 +17,7 @@ namespace Training_Center_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new frmLogin());
             ///  full man 
         }
     }
