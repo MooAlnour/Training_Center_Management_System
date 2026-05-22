@@ -51,7 +51,7 @@ namespace TC_DataAccess
         }
 
         public static bool GetCourseInfoByCourseID(int CourseID, ref string Title, ref int Hours
-            , ref decimal Price, ref DateTime StartDate, ref string Status)
+            , ref decimal Price, ref DateTime StartDate, ref byte Status)
         {
             bool isFound = false;
 
@@ -77,7 +77,7 @@ namespace TC_DataAccess
                     Hours = (int)reader["Hours"];
                     Price = (decimal)reader["Price"];
                     StartDate = (DateTime)reader["StartDate"];
-                    Status = (string)reader["Status"];
+                    Status = (byte)reader["Status"];
 
                 }
                 else
@@ -105,7 +105,7 @@ namespace TC_DataAccess
         }
 
         public static bool GetCourseInfoByTitle(string Title, ref int CourseID, ref int Hours
-            , ref decimal Price, ref DateTime StartDate, ref string Status)
+            , ref decimal Price, ref DateTime StartDate, ref byte Status)
         {
             bool isFound = false;
 
@@ -131,7 +131,7 @@ namespace TC_DataAccess
                     Hours = (int)reader["Hours"];
                     Price = (decimal)reader["Price"];
                     StartDate = (DateTime)reader["StartDate"];
-                    Status = (string)reader["Status"];
+                    Status = (byte)reader["Status"];
 
                 }
                 else
@@ -158,7 +158,7 @@ namespace TC_DataAccess
             return isFound;
         }
 
-        public static bool GetCourseInfoByStatus(string Status, ref int CourseID, ref string Title
+        public static bool GetCourseInfoByStatus(byte Status, ref int CourseID, ref string Title
             , ref int Hours, ref decimal Price, ref DateTime StartDate)
         {
             bool isFound = false;
@@ -213,7 +213,7 @@ namespace TC_DataAccess
         }
 
         public static int AddNewCourse(string Title, int Hours
-            , decimal Price, DateTime StartDate, string Status)
+            , decimal Price, DateTime StartDate, byte Status)
         {
             int CourseID = -1;
 
@@ -258,7 +258,7 @@ namespace TC_DataAccess
         }
 
         public static bool UpdateCourse(int CourseID, string Title, int Hours
-            , decimal Price, DateTime StartDate, string Status)
+            , decimal Price, DateTime StartDate, byte Status)
         {
 
             int rowsAffected = 0;
@@ -372,6 +372,40 @@ namespace TC_DataAccess
             return isFound;
         }
 
+        public static bool IsCourseExist(string Title)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT Found=1 FROM Courses WHERE Title = @Title";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@Title", Title);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                isFound = reader.HasRows;
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
+
         public static bool IsCourseActive(int CourseID)
         {
             bool isFound = false;
@@ -404,6 +438,42 @@ namespace TC_DataAccess
             }
 
             return isFound;
+        }
+
+        public static bool UpdateStatus(int CourseID, short Status)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Update  Courses  
+                            set 
+                                Status = @NewStatus, 
+                            where CourseID=@CourseID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@CourseID", CourseID);
+            command.Parameters.AddWithValue("@Status", Status);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
         }
 
     }

@@ -21,29 +21,36 @@ namespace TC_Bussines
             public int Hours { set; get; }
             public decimal Price { set; get; }
             public DateTime StartDate { set; get; }
-            public string Status { set; get; }
+             public enum enEnrollmentStatus
+             {
+            Active = 1,
+            Completed = 2,
+            Cancelled = 3
+        };
 
-            public CourseBL()
+        public enEnrollmentStatus Status = enEnrollmentStatus.Active;
+
+        public CourseBL()
             {
                 this.CourseID = -1;
                 this.Title = "";
                 this.Hours = 0;
                 this.Price = 0;
                 this.StartDate = DateTime.Now;
-                this.Status = "";
+                this.Status =0;
 
                 Mode = enMode.AddNew;
             }
 
             private CourseBL(int courseID, string title, int hours,
-                decimal price, DateTime startDate, string status)
+                decimal price, DateTime startDate, byte status)
             {
                 this.CourseID = courseID;
                 this.Title = title;
                 this.Hours = hours;
                 this.Price = price;
                 this.StartDate = startDate;
-                this.Status = status;
+                this.Status = (enEnrollmentStatus)status;
 
                 Mode = enMode.Update;
             }
@@ -51,7 +58,7 @@ namespace TC_Bussines
             public static CourseBL FindByCourseID(int courseID)
             {
 
-                string title = "", status = "";
+            string title = ""; byte status = 0;
                 int hours = 0;
                 decimal price = 0;
                 DateTime startDate = DateTime.Now;
@@ -73,7 +80,7 @@ namespace TC_Bussines
                 int hours = 0;
                 decimal price = 0;
                 DateTime startDate = DateTime.Now;
-                string status = "";
+                byte status = 0;
 
                 bool IsFound = CourseDL.GetCourseInfoByTitle(Title,
                     ref courseID, ref hours, ref price, ref startDate, ref status);
@@ -85,25 +92,62 @@ namespace TC_Bussines
 
             }
 
-            private bool _AddNewCourse()
+          private bool _ValidateCourseData(ref string ErrorMessage)
+        {
+
+
+            if (Price <= 0)
             {
+                ErrorMessage = "Price must be greater than 0.";
+                return false;
+            }
+
+            if (IsCourseExist(Title))
+            {
+                ErrorMessage = "Course are already Add to list.";
+                return false;
+            }
+            return true;
+        }
+
+           private bool _CanDeleteCourse(ref string ErrorMessage)
+        {
+
+
+            if (IsCourseActive(CourseID))
+            {
+                ErrorMessage = "Course are Active.";
+                return false;
+            }
+
+            return true;
+        }
+
+           private bool _AddNewCourse(ref string ErrorMessage)
+            {
+            if (_ValidateCourseData(ref ErrorMessage))
+                return false;
 
                 this.CourseID = CourseDL.AddNewCourse(this.Title,
-                    this.Hours, this.Price, this.StartDate, this.Status);
+                    this.Hours, this.Price, this.StartDate,(byte) this.Status);
 
                 return (this.CourseID != -1);
 
             }
 
-            private bool _UpdateCourse()
+            private bool _UpdateCourse(ref string ErrorMessage)
             {
-
-                return CourseDL.UpdateCourse(this.CourseID,
-                    this.Title, this.Hours, this.Price, this.StartDate, this.Status);
+            if (Price <= 0)
+            {
+                ErrorMessage = "Price must be greater than 0.";
+                return false;
+            }
+            return CourseDL.UpdateCourse(this.CourseID,
+                    this.Title, this.Hours, this.Price, this.StartDate, (byte)this.Status);
 
             }
 
-            public bool Save()
+            public bool Save(ref string ErrorMessage)
             {
 
                 switch (Mode)
@@ -111,7 +155,7 @@ namespace TC_Bussines
 
                     case enMode.AddNew:
 
-                        if (_AddNewCourse())
+                        if (_AddNewCourse(ref ErrorMessage))
                         {
 
                             Mode = enMode.Update;
@@ -125,7 +169,7 @@ namespace TC_Bussines
 
                     case enMode.Update:
 
-                        return _UpdateCourse();
+                        return _UpdateCourse(ref ErrorMessage);
 
                 }
 
@@ -138,19 +182,45 @@ namespace TC_Bussines
                 return CourseDL.GetAllCourses();
             }
 
-            public static bool DeleteCourse(int ID)
+            public static bool DeleteCourse(int ID, ref string ErrorMessage)
             {
-                return CourseDL.DeleteCourse(ID);
+            if (EnrollmentBL.IsCourseEnrolled(ID))
+                return false;
+            if (IsCourseActive(ID))
+                return false;
+
+            return CourseDL.DeleteCourse(ID);
             }
 
             public static bool IsCourseExist(int CourseID)
             {
                 return CourseDL.IsCourseExist(CourseID);
             }
+
+            public static bool IsCourseExist(string Title)
+        {
+            return CourseDL.IsCourseExist(Title);
+        }
             public static bool IsCourseActive(int CourseID)
             {
             return CourseDL.IsCourseActive(CourseID);
             }
+
+            public bool Cancel()
+
+      
+       {
+            if (EnrollmentBL.IsCourseEnrolled(CourseID))
+                return false;
+
+            return CourseDL.UpdateStatus(CourseID, 3);
+        }
+
+            public bool SetComplete()
+
+        {
+            return CourseDL.UpdateStatus(CourseID, 2);
+        }
 
     }
 

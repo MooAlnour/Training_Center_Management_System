@@ -232,11 +232,15 @@ namespace TC_Bussines
 
             return EnrollmentDL.IsStudentEnrolledInCourse(StudentID, CourseID);
         }
-           public static bool IsStudentEnrolledInCourse(int StudentID, int CourseID) {
+            public static bool IsStudentEnrolledInCourse(int StudentID, int CourseID) {
            
              return EnrollmentDL.IsStudentEnrolledInCourse(StudentID, CourseID);
             }
-           public static bool UpdateStatus(int EnrollmentID, enEnrollmentStatus Status)
+        public static bool IsCourseEnrolled(int CourseID)
+        {
+            return EnrollmentDL.IsCourseEnrolled(CourseID);
+        }
+            public static bool UpdateStatus(int EnrollmentID, enEnrollmentStatus Status)
         {
             return EnrollmentDL.UpdateStatus(EnrollmentID, (short)Status);
         }
