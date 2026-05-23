@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TC_Bussines;
+using Training_Center_Management_System.Users;
 
 namespace Training_Center_Management_System
 {
@@ -22,8 +23,12 @@ namespace Training_Center_Management_System
         private void Form1_Load(object sender, EventArgs e)
         {
             _dtAllUsers = UserBL.GetAllUsers();
+        }
 
-            dataGridView1.DataSource = _dtAllUsers;
+        private void employeesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUsersList frmUsers = new frmUsersList();
+            frmUsers.Show();
         }
     }
 }

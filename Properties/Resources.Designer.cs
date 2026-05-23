@@ -83,6 +83,16 @@ namespace Training_Center_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap login_button_label_filled_icon {
             get {
                 object obj = ResourceManager.GetObject("login-button-label-filled-icon", resourceCulture);
@@ -156,6 +166,26 @@ namespace Training_Center_Management_System.Properties {
         internal static System.Drawing.Bitmap png_transparent_computer_icons_login_login_button_miscellaneous_angle_text {
             get {
                 object obj = ResourceManager.GetObject("png-transparent-computer-icons-login-login-button-miscellaneous-angle-text", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_gear_man_setting_user_business_management_icon {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-gear-man-setting-user-business-management-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_vector_user_management_icon_png_image_4101419 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-vector-user-management-icon-png-image_4101419", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
