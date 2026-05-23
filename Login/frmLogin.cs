@@ -104,5 +104,16 @@ namespace Training_Center_Management_System.Login
         {
 
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmForgotPassword frmForgot = new frmForgotPassword();
+            frmForgot.Show();
+        }
     }
 }

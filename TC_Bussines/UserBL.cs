@@ -58,7 +58,7 @@ namespace TC_Bussines
             bool isActive = false;
 
 
-            bool IsFound = clsUser.GetUserInfoByUsernameAndPassword(UserName,passwordHash, ref UserID, ref isActive);
+            bool IsFound = clsUser.GetUserInfoByUsernameAndPassword(UserName,HashClass.HashMethod(passwordHash), ref UserID, ref isActive);
 
             if (IsFound)
                 //we return new object of that person with the right data
