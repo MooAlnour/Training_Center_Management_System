@@ -11,9 +11,9 @@ using TC_Bussines;
 
 namespace Training_Center_Management_System
 {
-    public partial class Form1: Form
+    public partial class frmMain: Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
         }

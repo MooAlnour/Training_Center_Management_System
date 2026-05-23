@@ -1,6 +1,6 @@
 ﻿namespace Training_Center_Management_System
 {
-    partial class Form1
+    partial class frmMain
     {
         /// <summary>
         /// Required designer variable.

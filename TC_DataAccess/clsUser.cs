@@ -107,12 +107,12 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Users WHERE Username = @Username and Password=@Password;";
+            string query = "SELECT * FROM Users WHERE Username = @Username and PasswordHash=@PasswordHash;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@Username", UserName);
-            command.Parameters.AddWithValue("@Password", PasswordHash);
+            command.Parameters.AddWithValue("@PasswordHash", PasswordHash);
 
 
             try
@@ -126,7 +126,7 @@ namespace TC_DataAccess
                     isFound = true;
                     UserID = (int)reader["UserID"];
                     UserName = (string)reader["UserName"];
-                    PasswordHash = (string)reader["Password"];
+                    PasswordHash = (string)reader["PasswordHash"];
                     IsActive = (bool)reader["IsActive"];
 
 
