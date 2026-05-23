@@ -161,5 +161,8 @@
   <ItemGroup>
     <None Include="Resources\png-transparent-gear-man-setting-user-business-management-icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPerson.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
