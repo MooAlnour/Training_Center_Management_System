@@ -83,6 +83,16 @@ namespace Training_Center_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cross_32 {
+            get {
+                object obj = ResourceManager.GetObject("cross 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images {
             get {
                 object obj = ResourceManager.GetObject("images", resourceCulture);
@@ -126,6 +136,16 @@ namespace Training_Center_Management_System.Properties {
         internal static System.Drawing.Bitmap Login_PNG_Royalty_Free_High_Quality {
             get {
                 object obj = ResourceManager.GetObject("Login-PNG-Royalty-Free-High-Quality", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Next_32 {
+            get {
+                object obj = ResourceManager.GetObject("Next 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +206,16 @@ namespace Training_Center_Management_System.Properties {
         internal static System.Drawing.Bitmap pngtree_vector_user_management_icon_png_image_4101419 {
             get {
                 object obj = ResourceManager.GetObject("pngtree-vector-user-management-icon-png-image_4101419", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Save_32 {
+            get {
+                object obj = ResourceManager.GetObject("Save 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

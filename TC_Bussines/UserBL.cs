@@ -39,6 +39,8 @@ namespace TC_Bussines
             IsActive = isActive;
             SecurityQuestion = securityQuestion;
             SecurityAnswerHash = securityAnswerHash;
+            Mode = enMode.Update;
+
         }
 
         public static UserBL FindByUserID(int userID)
@@ -146,11 +148,19 @@ namespace TC_Bussines
         {
             return clsUser.IsUserExist(ID);
         }
-        
+        public static bool isUserExist(string UserName)
+        {
+            return clsUser.IsUserExist(UserName);
+        }
         public static bool ChangePassword(int UserID, string Password)
         {
             return clsUser.ChangePassword(UserID, HashClass.HashMethod(Password));
         }
+        public bool ChangePassword2(int UserID, string Password)
+        {
+            return clsUser.ChangePassword(UserID, HashClass.HashMethod(Password));
+        }
+
         public static bool IsSecurityQuestionRight(int UserID, string securityQuestion)
         {
             return clsUser.IsSecurityQuestionRight(UserID, HashClass.HashMethod(securityQuestion));
