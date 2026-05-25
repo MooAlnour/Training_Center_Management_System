@@ -1,6 +1,6 @@
-﻿namespace Training_Center_Management_System.Users
+﻿namespace Training_Center_Management_System.Student
 {
-    partial class frmUsersList
+    partial class frmStudent
     {
         /// <summary>
         /// Required designer variable.
@@ -28,36 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(299, 372);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 54);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Users Management";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(399, 369);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(232, 38);
+            this.lblTitle.TabIndex = 6;
+            this.lblTitle.Text = "STUDENT FORM";
             // 
-            // frmUsersList
+            // frmStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1049, 777);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTitle);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmUsersList";
-            this.Text = "Users List";
-            this.Load += new System.EventHandler(this.frmUsersList_Load);
+            this.Name = "frmStudent";
+            this.Text = "frmStudent";
+            this.Load += new System.EventHandler(this.frmStudent_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.Label lblTitle;
     }
 }

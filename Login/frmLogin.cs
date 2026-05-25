@@ -36,7 +36,7 @@ namespace Training_Center_Management_System.Login
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

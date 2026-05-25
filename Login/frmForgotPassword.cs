@@ -25,13 +25,6 @@ namespace Training_Center_Management_System.Login
 
         }
 
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            frmLogin frm = new frmLogin();
-            frm.ShowDialog();
-        }
-
         private void btnFind_Click_1(object sender, EventArgs e)
         {
             UserBL user = UserBL.FindByUserName(txtUsername.Text.Trim());
@@ -151,6 +144,13 @@ namespace Training_Center_Management_System.Login
             lblUserID.Text = _User.UserID.ToString();
             lblUserName.Text = _User.UserName;
             return;
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmLogin frm = new frmLogin();
+            frm.ShowDialog();
         }
     }
 }

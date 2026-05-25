@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Training_Center_Management_System.Users
+namespace Training_Center_Management_System.Student
 {
-    public partial class frmUsersList: Form
+    public partial class frmStudent: Form
     {
-        public frmUsersList()
+        public frmStudent()
         {
             InitializeComponent();
         }
 
-        private void frmUsersList_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void frmStudent_Load(object sender, EventArgs e)
         {
 
         }

@@ -28,341 +28,420 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.msMainMenue = new System.Windows.Forms.MenuStrip();
-            this.servicesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.drivingLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.oNewDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.localLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.internationalLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renewDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.releaseDetainedDrivingLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.retakeTestToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsMManageApplications = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.DetainLicensesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ManageDetainedLicensestoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.detainLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.releaseDetainedLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.employeesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.signOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.msMainMenue.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.panelheader = new System.Windows.Forms.Panel();
+            this.btnMinimize = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.btnclose = new System.Windows.Forms.Button();
+            this.panelside = new System.Windows.Forms.Panel();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblTimer = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnStudents = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.btndashbaord = new System.Windows.Forms.Button();
+            this.btnUsers = new System.Windows.Forms.Button();
+            this.btnEnrollments = new System.Windows.Forms.Button();
+            this.btnCourses = new System.Windows.Forms.Button();
+            this.btnPayments = new System.Windows.Forms.Button();
+            this.mainpanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.panelheader.SuspendLayout();
+            this.panelside.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.mainpanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // msMainMenue
+            // panelheader
             // 
-            this.msMainMenue.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.msMainMenue.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.msMainMenue.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.msMainMenue.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.servicesToolStripMenuItem,
-            this.peopleToolStripMenuItem,
-            this.employeesToolStripMenuItem,
-            this.driversToolStripMenuItem,
-            this.closeToolStripMenuItem});
-            this.msMainMenue.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
-            this.msMainMenue.Location = new System.Drawing.Point(0, 0);
-            this.msMainMenue.Name = "msMainMenue";
-            this.msMainMenue.Size = new System.Drawing.Size(1452, 72);
-            this.msMainMenue.TabIndex = 2;
-            this.msMainMenue.Text = "menuStrip1";
+            this.panelheader.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelheader.Controls.Add(this.btnMinimize);
+            this.panelheader.Controls.Add(this.button1);
+            this.panelheader.Controls.Add(this.lblTitle);
+            this.panelheader.Controls.Add(this.btnclose);
+            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelheader.Location = new System.Drawing.Point(0, 0);
+            this.panelheader.Margin = new System.Windows.Forms.Padding(4);
+            this.panelheader.Name = "panelheader";
+            this.panelheader.Size = new System.Drawing.Size(1316, 49);
+            this.panelheader.TabIndex = 3;
+            this.panelheader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelheader_MouseDown);
             // 
-            // servicesToolStripMenuItem
+            // btnMinimize
             // 
-            this.servicesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.drivingLicensesToolStripMenuItem,
-            this.toolStripSeparator6,
-            this.tsMManageApplications,
-            this.toolStripSeparator5,
-            this.DetainLicensesToolStripMenuItem1,
-            this.manageApplicationTypesToolStripMenuItem,
-            this.manageTestTypesToolStripMenuItem});
-            this.servicesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.servicesToolStripMenuItem.Name = "servicesToolStripMenuItem";
-            this.servicesToolStripMenuItem.Size = new System.Drawing.Size(144, 32);
-            this.servicesToolStripMenuItem.Text = "&Applications";
+            this.btnMinimize.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnMinimize.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMinimize.FlatAppearance.BorderSize = 0;
+            this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimize.ForeColor = System.Drawing.Color.White;
+            this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMinimize.Location = new System.Drawing.Point(1234, 4);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMinimize.Name = "btnMinimize";
+            this.btnMinimize.Size = new System.Drawing.Size(37, 32);
+            this.btnMinimize.TabIndex = 5;
+            this.btnMinimize.Text = "---";
+            this.btnMinimize.UseVisualStyleBackColor = false;
+            this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
-            // drivingLicensesToolStripMenuItem
+            // button1
             // 
-            this.drivingLicensesToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
-            this.drivingLicensesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.oNewDrivingLicenseToolStripMenuItem,
-            this.renewDrivingLicenseToolStripMenuItem,
-            this.toolStripSeparator1,
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem,
-            this.toolStripSeparator2,
-            this.releaseDetainedDrivingLicenseToolStripMenuItem,
-            this.retakeTestToolStripMenuItem1});
-            this.drivingLicensesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.drivingLicensesToolStripMenuItem.Name = "drivingLicensesToolStripMenuItem";
-            this.drivingLicensesToolStripMenuItem.Size = new System.Drawing.Size(349, 32);
-            this.drivingLicensesToolStripMenuItem.Text = "&Driving Licenses Services";
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(1279, 1);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(37, 37);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // oNewDrivingLicenseToolStripMenuItem
+            // lblTitle
             // 
-            this.oNewDrivingLicenseToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.localLicenseToolStripMenuItem,
-            this.internationalLicenseToolStripMenuItem});
-            this.oNewDrivingLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.oNewDrivingLicenseToolStripMenuItem.Name = "oNewDrivingLicenseToolStripMenuItem";
-            this.oNewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(497, 32);
-            this.oNewDrivingLicenseToolStripMenuItem.Text = "&New Driving License";
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(430, 1);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(503, 38);
+            this.lblTitle.TabIndex = 4;
+            this.lblTitle.Text = "Training Center Management System";
             // 
-            // localLicenseToolStripMenuItem
+            // btnclose
             // 
-            this.localLicenseToolStripMenuItem.Name = "localLicenseToolStripMenuItem";
-            this.localLicenseToolStripMenuItem.Size = new System.Drawing.Size(296, 32);
-            this.localLicenseToolStripMenuItem.Text = "&Local License";
+            this.btnclose.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnclose.Location = new System.Drawing.Point(1416, 0);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(37, 37);
+            this.btnclose.TabIndex = 1;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
             // 
-            // internationalLicenseToolStripMenuItem
+            // panelside
             // 
-            this.internationalLicenseToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.internationalLicenseToolStripMenuItem.Name = "internationalLicenseToolStripMenuItem";
-            this.internationalLicenseToolStripMenuItem.Size = new System.Drawing.Size(296, 32);
-            this.internationalLicenseToolStripMenuItem.Text = "&International License";
+            this.panelside.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelside.Controls.Add(this.btnReports);
+            this.panelside.Controls.Add(this.groupBox1);
+            this.panelside.Controls.Add(this.pictureBox1);
+            this.panelside.Controls.Add(this.btnStudents);
+            this.panelside.Controls.Add(this.button6);
+            this.panelside.Controls.Add(this.btnLogout);
+            this.panelside.Controls.Add(this.btndashbaord);
+            this.panelside.Controls.Add(this.btnUsers);
+            this.panelside.Controls.Add(this.btnEnrollments);
+            this.panelside.Controls.Add(this.btnCourses);
+            this.panelside.Controls.Add(this.btnPayments);
+            this.panelside.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelside.Location = new System.Drawing.Point(0, 49);
+            this.panelside.Margin = new System.Windows.Forms.Padding(4);
+            this.panelside.Name = "panelside";
+            this.panelside.Size = new System.Drawing.Size(267, 777);
+            this.panelside.TabIndex = 4;
             // 
-            // renewDrivingLicenseToolStripMenuItem
+            // btnReports
             // 
-            this.renewDrivingLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.renewDrivingLicenseToolStripMenuItem.Name = "renewDrivingLicenseToolStripMenuItem";
-            this.renewDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(497, 32);
-            this.renewDrivingLicenseToolStripMenuItem.Text = "&Renew Driving License";
+            this.btnReports.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.White;
+            this.btnReports.Image = global::Training_Center_Management_System.Properties.Resources.icons8_report_32;
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.Location = new System.Drawing.Point(0, 479);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(267, 56);
+            this.btnReports.TabIndex = 7;
+            this.btnReports.Text = "REPORTS";
+            this.btnReports.UseVisualStyleBackColor = false;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
-            // toolStripSeparator1
+            // groupBox1
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(494, 6);
+            this.groupBox1.Controls.Add(this.lblDate);
+            this.groupBox1.Controls.Add(this.lblTimer);
+            this.groupBox1.Location = new System.Drawing.Point(3, 662);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(257, 109);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
             // 
-            // ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem
+            // lblDate
             // 
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem.Name = "ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem";
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(497, 32);
-            this.ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem.Text = "Replacement for Lost or &Damaged License";
+            this.lblDate.AutoSize = true;
+            this.lblDate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDate.ForeColor = System.Drawing.Color.White;
+            this.lblDate.Location = new System.Drawing.Point(43, 72);
+            this.lblDate.Name = "lblDate";
+            this.lblDate.Size = new System.Drawing.Size(154, 28);
+            this.lblDate.TabIndex = 2;
+            this.lblDate.Text = "day 00/0/0000";
             // 
-            // toolStripSeparator2
+            // lblTimer
             // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(494, 6);
+            this.lblTimer.AutoSize = true;
+            this.lblTimer.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTimer.ForeColor = System.Drawing.Color.White;
+            this.lblTimer.Location = new System.Drawing.Point(41, 18);
+            this.lblTimer.Name = "lblTimer";
+            this.lblTimer.Size = new System.Drawing.Size(181, 38);
+            this.lblTimer.TabIndex = 1;
+            this.lblTimer.Text = "00:00:00 PM";
             // 
-            // releaseDetainedDrivingLicenseToolStripMenuItem
+            // pictureBox1
             // 
-            this.releaseDetainedDrivingLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.releaseDetainedDrivingLicenseToolStripMenuItem.Name = "releaseDetainedDrivingLicenseToolStripMenuItem";
-            this.releaseDetainedDrivingLicenseToolStripMenuItem.Size = new System.Drawing.Size(497, 32);
-            this.releaseDetainedDrivingLicenseToolStripMenuItem.Text = "Release Detained Driving License";
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._37781203;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(233, 164);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
             // 
-            // retakeTestToolStripMenuItem1
+            // btnStudents
             // 
-            this.retakeTestToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.retakeTestToolStripMenuItem1.Name = "retakeTestToolStripMenuItem1";
-            this.retakeTestToolStripMenuItem1.Size = new System.Drawing.Size(497, 32);
-            this.retakeTestToolStripMenuItem1.Text = "Retake Test";
+            this.btnStudents.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnStudents.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnStudents.FlatAppearance.BorderSize = 0;
+            this.btnStudents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStudents.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStudents.ForeColor = System.Drawing.Color.White;
+            this.btnStudents.Image = global::Training_Center_Management_System.Properties.Resources.icons8_student_32;
+            this.btnStudents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnStudents.Location = new System.Drawing.Point(3, 221);
+            this.btnStudents.Margin = new System.Windows.Forms.Padding(4);
+            this.btnStudents.Name = "btnStudents";
+            this.btnStudents.Size = new System.Drawing.Size(267, 56);
+            this.btnStudents.TabIndex = 2;
+            this.btnStudents.Text = "STUDENTS";
+            this.btnStudents.UseVisualStyleBackColor = false;
+            this.btnStudents.Click += new System.EventHandler(this.btnStudents_Click);
             // 
-            // toolStripSeparator6
+            // button6
             // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(346, 6);
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(726, 301);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(267, 53);
+            this.button6.TabIndex = 0;
+            this.button6.Text = "DASHBOARD";
+            this.button6.UseVisualStyleBackColor = false;
             // 
-            // tsMManageApplications
+            // btnLogout
             // 
-            this.tsMManageApplications.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem,
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1});
-            this.tsMManageApplications.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.tsMManageApplications.Name = "tsMManageApplications";
-            this.tsMManageApplications.Size = new System.Drawing.Size(349, 32);
-            this.tsMManageApplications.Text = "Manage Applications";
+            this.btnLogout.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.White;
+            this.btnLogout.Image = global::Training_Center_Management_System.Properties.Resources.icons8_user_logout_32;
+            this.btnLogout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogout.Location = new System.Drawing.Point(3, 607);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(267, 56);
+            this.btnLogout.TabIndex = 6;
+            this.btnLogout.Text = "LOG OUT";
+            this.btnLogout.UseVisualStyleBackColor = false;
             // 
-            // manageLocalDrivingLicenseApplicationsToolStripMenuItem
+            // btndashbaord
             // 
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem.Name = "manageLocalDrivingLicenseApplicationsToolStripMenuItem";
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem.Size = new System.Drawing.Size(422, 32);
-            this.manageLocalDrivingLicenseApplicationsToolStripMenuItem.Text = "Local Driving License Applications";
+            this.btndashbaord.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btndashbaord.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btndashbaord.FlatAppearance.BorderSize = 0;
+            this.btndashbaord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndashbaord.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndashbaord.ForeColor = System.Drawing.Color.White;
+            this.btndashbaord.Image = global::Training_Center_Management_System.Properties.Resources.icons8_dashboard_32;
+            this.btndashbaord.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndashbaord.Location = new System.Drawing.Point(0, 172);
+            this.btndashbaord.Margin = new System.Windows.Forms.Padding(4);
+            this.btndashbaord.Name = "btndashbaord";
+            this.btndashbaord.Size = new System.Drawing.Size(267, 53);
+            this.btndashbaord.TabIndex = 0;
+            this.btndashbaord.Text = "DASHBOARD";
+            this.btndashbaord.UseVisualStyleBackColor = false;
+            this.btndashbaord.Click += new System.EventHandler(this.btndashbaord_Click);
             // 
-            // ManageInternationaDrivingLicenseToolStripMenuItem1
+            // btnUsers
             // 
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1.Name = "ManageInternationaDrivingLicenseToolStripMenuItem1";
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1.Size = new System.Drawing.Size(422, 32);
-            this.ManageInternationaDrivingLicenseToolStripMenuItem1.Text = "International License Applications";
+            this.btnUsers.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnUsers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnUsers.FlatAppearance.BorderSize = 0;
+            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUsers.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUsers.ForeColor = System.Drawing.Color.White;
+            this.btnUsers.Image = global::Training_Center_Management_System.Properties.Resources.icons8_user_32;
+            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUsers.Location = new System.Drawing.Point(0, 543);
+            this.btnUsers.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUsers.Name = "btnUsers";
+            this.btnUsers.Size = new System.Drawing.Size(267, 56);
+            this.btnUsers.TabIndex = 5;
+            this.btnUsers.Text = "USERS";
+            this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // toolStripSeparator5
+            // btnEnrollments
             // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(346, 6);
+            this.btnEnrollments.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnEnrollments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEnrollments.FlatAppearance.BorderSize = 0;
+            this.btnEnrollments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEnrollments.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnrollments.ForeColor = System.Drawing.Color.White;
+            this.btnEnrollments.Image = global::Training_Center_Management_System.Properties.Resources.icons8_register_30;
+            this.btnEnrollments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEnrollments.Location = new System.Drawing.Point(3, 351);
+            this.btnEnrollments.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEnrollments.Name = "btnEnrollments";
+            this.btnEnrollments.Size = new System.Drawing.Size(267, 56);
+            this.btnEnrollments.TabIndex = 3;
+            this.btnEnrollments.Text = "ENROLLMENTS";
+            this.btnEnrollments.UseVisualStyleBackColor = false;
+            this.btnEnrollments.Click += new System.EventHandler(this.btnEnrollments_Click);
             // 
-            // DetainLicensesToolStripMenuItem1
+            // btnCourses
             // 
-            this.DetainLicensesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ManageDetainedLicensestoolStripMenuItem1,
-            this.detainLicenseToolStripMenuItem,
-            this.releaseDetainedLicenseToolStripMenuItem});
-            this.DetainLicensesToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.DetainLicensesToolStripMenuItem1.Name = "DetainLicensesToolStripMenuItem1";
-            this.DetainLicensesToolStripMenuItem1.Size = new System.Drawing.Size(349, 32);
-            this.DetainLicensesToolStripMenuItem1.Text = "Detain Licenses";
+            this.btnCourses.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCourses.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCourses.FlatAppearance.BorderSize = 0;
+            this.btnCourses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCourses.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCourses.ForeColor = System.Drawing.Color.White;
+            this.btnCourses.Image = global::Training_Center_Management_System.Properties.Resources.icons8_course_32;
+            this.btnCourses.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCourses.Location = new System.Drawing.Point(0, 285);
+            this.btnCourses.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCourses.Name = "btnCourses";
+            this.btnCourses.Size = new System.Drawing.Size(267, 58);
+            this.btnCourses.TabIndex = 1;
+            this.btnCourses.Text = "COURSES";
+            this.btnCourses.UseVisualStyleBackColor = false;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
-            // ManageDetainedLicensestoolStripMenuItem1
+            // btnPayments
             // 
-            this.ManageDetainedLicensestoolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.ManageDetainedLicensestoolStripMenuItem1.Name = "ManageDetainedLicensestoolStripMenuItem1";
-            this.ManageDetainedLicensestoolStripMenuItem1.Size = new System.Drawing.Size(350, 32);
-            this.ManageDetainedLicensestoolStripMenuItem1.Text = "Manage Detained Licenses";
+            this.btnPayments.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPayments.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPayments.FlatAppearance.BorderSize = 0;
+            this.btnPayments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPayments.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPayments.ForeColor = System.Drawing.Color.White;
+            this.btnPayments.Image = global::Training_Center_Management_System.Properties.Resources.icons8_money_32;
+            this.btnPayments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPayments.Location = new System.Drawing.Point(0, 415);
+            this.btnPayments.Margin = new System.Windows.Forms.Padding(4);
+            this.btnPayments.Name = "btnPayments";
+            this.btnPayments.Size = new System.Drawing.Size(267, 56);
+            this.btnPayments.TabIndex = 4;
+            this.btnPayments.Text = "PAYMENTS";
+            this.btnPayments.UseVisualStyleBackColor = false;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
-            // detainLicenseToolStripMenuItem
+            // mainpanel
             // 
-            this.detainLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.detainLicenseToolStripMenuItem.Name = "detainLicenseToolStripMenuItem";
-            this.detainLicenseToolStripMenuItem.Size = new System.Drawing.Size(350, 32);
-            this.detainLicenseToolStripMenuItem.Text = "Detain License";
+            this.mainpanel.Controls.Add(this.label1);
+            this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainpanel.Location = new System.Drawing.Point(267, 49);
+            this.mainpanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainpanel.Name = "mainpanel";
+            this.mainpanel.Size = new System.Drawing.Size(1049, 777);
+            this.mainpanel.TabIndex = 5;
             // 
-            // releaseDetainedLicenseToolStripMenuItem
+            // label1
             // 
-            this.releaseDetainedLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
-            this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(350, 32);
-            this.releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(370, 259);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(139, 38);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "main frm";
             // 
-            // manageApplicationTypesToolStripMenuItem
+            // timer1
             // 
-            this.manageApplicationTypesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
-            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(349, 32);
-            this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
-            // 
-            // manageTestTypesToolStripMenuItem
-            // 
-            this.manageTestTypesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(349, 32);
-            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
-            // 
-            // peopleToolStripMenuItem
-            // 
-            this.peopleToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("peopleToolStripMenuItem.Image")));
-            this.peopleToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.peopleToolStripMenuItem.Name = "peopleToolStripMenuItem";
-            this.peopleToolStripMenuItem.Size = new System.Drawing.Size(153, 68);
-            this.peopleToolStripMenuItem.Text = "People";
-            // 
-            // driversToolStripMenuItem
-            // 
-            this.driversToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.driversToolStripMenuItem.Name = "driversToolStripMenuItem";
-            this.driversToolStripMenuItem.Size = new System.Drawing.Size(94, 32);
-            this.driversToolStripMenuItem.Text = "Drivers";
-            // 
-            // employeesToolStripMenuItem
-            // 
-            this.employeesToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.employeesToolStripMenuItem.Name = "employeesToolStripMenuItem";
-            this.employeesToolStripMenuItem.Size = new System.Drawing.Size(77, 32);
-            this.employeesToolStripMenuItem.Text = "Users";
-            this.employeesToolStripMenuItem.Click += new System.EventHandler(this.employeesToolStripMenuItem_Click);
-            // 
-            // closeToolStripMenuItem
-            // 
-            this.closeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentUserInfoToolStripMenuItem,
-            this.changePasswordToolStripMenuItem,
-            this.toolStripSeparator4,
-            this.signOutToolStripMenuItem});
-            this.closeToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(187, 32);
-            this.closeToolStripMenuItem.Text = "Account Settings";
-            // 
-            // currentUserInfoToolStripMenuItem
-            // 
-            this.currentUserInfoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
-            this.currentUserInfoToolStripMenuItem.Text = "&Current User Info";
-            // 
-            // changePasswordToolStripMenuItem
-            // 
-            this.changePasswordToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
-            this.changePasswordToolStripMenuItem.Text = "Change Password";
-            // 
-            // toolStripSeparator4
-            // 
-            this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(260, 6);
-            // 
-            // signOutToolStripMenuItem
-            // 
-            this.signOutToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.signOutToolStripMenuItem.Name = "signOutToolStripMenuItem";
-            this.signOutToolStripMenuItem.Size = new System.Drawing.Size(263, 32);
-            this.signOutToolStripMenuItem.Text = "Sign &Out";
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1452, 820);
-            this.Controls.Add(this.msMainMenue);
+            this.ClientSize = new System.Drawing.Size(1316, 826);
+            this.Controls.Add(this.mainpanel);
+            this.Controls.Add(this.panelside);
+            this.Controls.Add(this.panelheader);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.msMainMenue.ResumeLayout(false);
-            this.msMainMenue.PerformLayout();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "frmMain";
+            this.Load += new System.EventHandler(this.frmMain_Load);
+            this.panelheader.ResumeLayout(false);
+            this.panelheader.PerformLayout();
+            this.panelside.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.mainpanel.ResumeLayout(false);
+            this.mainpanel.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip msMainMenue;
-        private System.Windows.Forms.ToolStripMenuItem servicesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem drivingLicensesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem oNewDrivingLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem localLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem internationalLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem renewDrivingLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem ReplacementLostOrDamagedDrivingLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem releaseDetainedDrivingLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem retakeTestToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
-        private System.Windows.Forms.ToolStripMenuItem tsMManageApplications;
-        private System.Windows.Forms.ToolStripMenuItem manageLocalDrivingLicenseApplicationsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ManageInternationaDrivingLicenseToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
-        private System.Windows.Forms.ToolStripMenuItem DetainLicensesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem ManageDetainedLicensestoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem detainLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem releaseDetainedLicenseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageApplicationTypesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem manageTestTypesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem peopleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem employeesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem driversToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem currentUserInfoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changePasswordToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
+        private System.Windows.Forms.Panel panelheader;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panelside;
+        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lblDate;
+        private System.Windows.Forms.Label lblTimer;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnStudents;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Button btndashbaord;
+        private System.Windows.Forms.Button btnUsers;
+        private System.Windows.Forms.Button btnEnrollments;
+        private System.Windows.Forms.Button btnCourses;
+        private System.Windows.Forms.Button btnPayments;
+        private System.Windows.Forms.Panel mainpanel;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnMinimize;
+        private System.Windows.Forms.Label label1;
     }
 }
-

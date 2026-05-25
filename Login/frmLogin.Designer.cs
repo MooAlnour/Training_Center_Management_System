@@ -65,7 +65,7 @@
             this.panel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(-8, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(353, 448);
+            this.panel1.Size = new System.Drawing.Size(353, 453);
             this.panel1.TabIndex = 0;
             // 
             // label1
