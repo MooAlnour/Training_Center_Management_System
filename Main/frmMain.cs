@@ -13,7 +13,10 @@ using Training_Center_Management_System.Student;
 using Training_Center_Management_System.Course;
 using Training_Center_Management_System.Enrollment;
 using Training_Center_Management_System.Reports;
-using Training_Center_Management_System.Pyment;
+using Training_Center_Management_System.Payment;
+using System.Drawing.Drawing2D;
+using Training_Center_Management_System.Global_Classes;
+using Training_Center_Management_System.Main;
 namespace Training_Center_Management_System
 {
     public partial class frmMain: Form
@@ -23,7 +26,31 @@ namespace Training_Center_Management_System
             InitializeComponent();
             panelheader.MouseDown += panelheader_MouseDown;
             lblTitle.MouseDown += panelheader_MouseDown;
-            loadform(new frmDashbord());
+            LoadControl(new ucDashbord());
+            RoundPanel(panelside, 30);
+        }
+
+        private void RoundPanel(Panel panel, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+
+            path.StartFigure();
+
+            // Top Left
+            path.AddArc(0, 0, radius, radius, 180, 90);
+
+            // Top Right
+            path.AddArc(panel.Width - radius, 0, radius, radius, 270, 90);
+
+            // Bottom Right
+            path.AddArc(panel.Width - radius, panel.Height - radius, radius, radius, 0, 90);
+
+            // Bottom Left
+            path.AddArc(0, panel.Height - radius, radius, radius, 90, 90);
+
+            path.CloseFigure();
+
+            panel.Region = new Region(path);
         }
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -31,20 +58,24 @@ namespace Training_Center_Management_System
         [DllImport("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
 
-        public void loadform(object Form)
+        
+
+        public void LoadControl(object control)
         {
-            if (this.mainpanel.Controls.Count > 0)
-                this.mainpanel.Controls.RemoveAt(0);
-            Form f = Form as Form;
-            f.TopLevel = false;
-            f.Dock = DockStyle.Fill;
-            this.mainpanel.Controls.Add(f);
-            this.mainpanel.Tag = f;
-            f.Show();
+            mainpanel.Controls.Clear();
+
+            UserControl uc = control as UserControl;
+
+            uc.Dock = DockStyle.Fill;
+
+            mainpanel.Controls.Add(uc);
+
+            uc.BringToFront();
         }
         private void frmMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
+            lblUserName.Text ="Welcome Back ["+ clsGlobal.CurrentUser.UserName+ "]";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -72,38 +103,43 @@ namespace Training_Center_Management_System
 
         private void btnEnrollments_Click(object sender, EventArgs e)
         {
-            loadform(new frmEnrollment());
+            LoadControl(new ucEnrollment());
         }
 
         private void btndashbaord_Click(object sender, EventArgs e)
         {
-            loadform(new frmDashbord());
+            LoadControl(new ucDashbord());
         }
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            loadform(new frmUsersList());
+            LoadControl(new ucUsers());
         }
 
         private void btnStudents_Click(object sender, EventArgs e)
         {
-            loadform(new frmStudent());
+            LoadControl(new ucStudent());
         }
 
         private void btnCourses_Click(object sender, EventArgs e)
         {
-            loadform(new frmCourse());
+            LoadControl(new ucCourse());
             
         }
 
         private void btnPayments_Click(object sender, EventArgs e)
         {
-            loadform(new frmPayment());
+            LoadControl(new ucPayment());
         }
 
         private void btnReports_Click(object sender, EventArgs e)
         {
-            loadform(new frmReport());
+            LoadControl(new ucReport());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

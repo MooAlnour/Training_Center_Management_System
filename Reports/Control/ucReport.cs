@@ -1,25 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Training_Center_Management_System.Student
+namespace Training_Center_Management_System.Reports
 {
-    public partial class frmStudent: Form
+    public partial class ucReport: UserControl
     {
-        public frmStudent()
+        public ucReport()
         {
             InitializeComponent();
-        }
-
-        private void frmStudent_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

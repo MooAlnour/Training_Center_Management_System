@@ -1,13 +1,13 @@
 ﻿namespace Training_Center_Management_System.Reports
 {
-    partial class frmReport
+    partial class ucReport
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,10 +20,10 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -35,21 +35,19 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(384, 351);
+            this.lblTitle.Location = new System.Drawing.Point(408, 369);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(195, 38);
-            this.lblTitle.TabIndex = 6;
-            this.lblTitle.Text = "Report FORM";
+            this.lblTitle.Size = new System.Drawing.Size(232, 38);
+            this.lblTitle.TabIndex = 8;
+            this.lblTitle.Text = "STUDENT FORM";
             // 
-            // frmReport
+            // ucReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1049, 777);
             this.Controls.Add(this.lblTitle);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmReport";
-            this.Text = "frmReport";
+            this.Name = "ucReport";
+            this.Size = new System.Drawing.Size(1049, 777);
             this.ResumeLayout(false);
             this.PerformLayout();
 

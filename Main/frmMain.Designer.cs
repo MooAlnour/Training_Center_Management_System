@@ -29,11 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.panelheader = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.btnclose = new System.Windows.Forms.Button();
             this.panelside = new System.Windows.Forms.Panel();
             this.btnReports = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -49,29 +47,15 @@
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnPayments = new System.Windows.Forms.Button();
             this.mainpanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panelheader.SuspendLayout();
+            this.btnclose = new System.Windows.Forms.Button();
+            this.panelheader = new System.Windows.Forms.Panel();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.panelside.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.mainpanel.SuspendLayout();
+            this.panelheader.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panelheader
-            // 
-            this.panelheader.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelheader.Controls.Add(this.btnMinimize);
-            this.panelheader.Controls.Add(this.button1);
-            this.panelheader.Controls.Add(this.lblTitle);
-            this.panelheader.Controls.Add(this.btnclose);
-            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelheader.Location = new System.Drawing.Point(0, 0);
-            this.panelheader.Margin = new System.Windows.Forms.Padding(4);
-            this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1316, 49);
-            this.panelheader.TabIndex = 3;
-            this.panelheader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelheader_MouseDown);
             // 
             // btnMinimize
             // 
@@ -112,29 +96,12 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(430, 1);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Location = new System.Drawing.Point(283, 10);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(503, 38);
+            this.lblTitle.Size = new System.Drawing.Size(362, 28);
             this.lblTitle.TabIndex = 4;
             this.lblTitle.Text = "Training Center Management System";
-            // 
-            // btnclose
-            // 
-            this.btnclose.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnclose.FlatAppearance.BorderSize = 0;
-            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnclose.ForeColor = System.Drawing.Color.White;
-            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnclose.Location = new System.Drawing.Point(1416, 0);
-            this.btnclose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnclose.Name = "btnclose";
-            this.btnclose.Size = new System.Drawing.Size(37, 37);
-            this.btnclose.TabIndex = 1;
-            this.btnclose.Text = "X";
-            this.btnclose.UseVisualStyleBackColor = false;
             // 
             // panelside
             // 
@@ -211,13 +178,14 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._37781203;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 8);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(233, 164);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnStudents
             // 
@@ -370,7 +338,6 @@
             // 
             // mainpanel
             // 
-            this.mainpanel.Controls.Add(this.label1);
             this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainpanel.Location = new System.Drawing.Point(267, 49);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(4);
@@ -378,21 +345,54 @@
             this.mainpanel.Size = new System.Drawing.Size(1049, 777);
             this.mainpanel.TabIndex = 5;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(370, 259);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 38);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "main frm";
-            // 
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // btnclose
+            // 
+            this.btnclose.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnclose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnclose.FlatAppearance.BorderSize = 0;
+            this.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnclose.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnclose.ForeColor = System.Drawing.Color.White;
+            this.btnclose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnclose.Location = new System.Drawing.Point(1416, 0);
+            this.btnclose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnclose.Name = "btnclose";
+            this.btnclose.Size = new System.Drawing.Size(37, 37);
+            this.btnclose.TabIndex = 1;
+            this.btnclose.Text = "X";
+            this.btnclose.UseVisualStyleBackColor = false;
+            // 
+            // panelheader
+            // 
+            this.panelheader.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelheader.Controls.Add(this.lblUserName);
+            this.panelheader.Controls.Add(this.btnMinimize);
+            this.panelheader.Controls.Add(this.button1);
+            this.panelheader.Controls.Add(this.lblTitle);
+            this.panelheader.Controls.Add(this.btnclose);
+            this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelheader.Location = new System.Drawing.Point(0, 0);
+            this.panelheader.Margin = new System.Windows.Forms.Padding(4);
+            this.panelheader.Name = "panelheader";
+            this.panelheader.Size = new System.Drawing.Size(1316, 49);
+            this.panelheader.TabIndex = 3;
+            this.panelheader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelheader_MouseDown);
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(843, 16);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(91, 20);
+            this.lblUserName.TabIndex = 6;
+            this.lblUserName.Text = "username";
             // 
             // frmMain
             // 
@@ -407,23 +407,18 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMain";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            this.panelheader.ResumeLayout(false);
-            this.panelheader.PerformLayout();
             this.panelside.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.mainpanel.ResumeLayout(false);
-            this.mainpanel.PerformLayout();
+            this.panelheader.ResumeLayout(false);
+            this.panelheader.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panelheader;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.Button btnclose;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelside;
         private System.Windows.Forms.Button btnReports;
@@ -442,6 +437,8 @@
         private System.Windows.Forms.Panel mainpanel;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btnMinimize;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnclose;
+        private System.Windows.Forms.Panel panelheader;
+        private System.Windows.Forms.Label lblUserName;
     }
 }
