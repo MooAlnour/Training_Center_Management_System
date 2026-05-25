@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.lblTitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -41,10 +42,22 @@
             this.lblTitle.TabIndex = 8;
             this.lblTitle.Text = "STUDENT FORM";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(367, 175);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 38);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "STUDENT List";
+            // 
             // ucCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTitle);
             this.Name = "ucCourse";
             this.Size = new System.Drawing.Size(1049, 777);
@@ -56,5 +69,6 @@
         #endregion
 
         private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Label label1;
     }
 }
