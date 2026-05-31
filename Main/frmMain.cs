@@ -66,7 +66,7 @@ namespace Training_Center_Management_System
 
             UserControl uc = control as UserControl;
 
-            uc.Dock = DockStyle.Fill;
+            uc.Dock = DockStyle.None;
 
             mainpanel.Controls.Add(uc);
 
@@ -75,7 +75,7 @@ namespace Training_Center_Management_System
         private void frmMain_Load(object sender, EventArgs e)
         {
             timer1.Start();
-            lblUserName.Text ="Welcome Back ["+ clsGlobal.CurrentUser.UserName+ "]";
+        //    lblUserName.Text ="Welcome Back ["+ clsGlobal.CurrentUser.UserName+ "]";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -108,7 +108,8 @@ namespace Training_Center_Management_System
 
         private void btndashbaord_Click(object sender, EventArgs e)
         {
-            LoadControl(new ucDashbord());
+          Form1 form= new Form1();
+            form.Show();
         }
 
         private void btnUsers_Click(object sender, EventArgs e)

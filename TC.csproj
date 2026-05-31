@@ -58,6 +58,12 @@
     <Compile Include="Enrollment\Control\ucEnrollment.Designer.cs">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,18 @@
     <Compile Include="Student\Control\ucStudent.Designer.cs">
       <DependentUpon>ucStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\frmAddEditStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\frmAddEditStudent.Designer.cs">
+      <DependentUpon>frmAddEditStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\frmShowStudentInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\frmShowStudentInfo.Designer.cs">
+      <DependentUpon>frmShowStudentInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\Control\ucUsers.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\Control\ucEnrollment.resx">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -147,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\Control\ucStudent.resx">
       <DependentUpon>ucStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\frmAddEditStudent.resx">
+      <DependentUpon>frmAddEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\frmShowStudentInfo.resx">
+      <DependentUpon>frmShowStudentInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Control\ucUsers.resx">
       <DependentUpon>ucUsers.cs</DependentUpon>
@@ -190,6 +217,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-search-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Email 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save 321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close 32.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

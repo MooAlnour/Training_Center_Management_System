@@ -66,7 +66,7 @@
             this.btnMinimize.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
             this.btnMinimize.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMinimize.Location = new System.Drawing.Point(1234, 4);
+            this.btnMinimize.Location = new System.Drawing.Point(1067, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(37, 32);
@@ -84,10 +84,10 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(1279, 1);
+            this.button1.Location = new System.Drawing.Point(1112, 0);
             this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(37, 37);
+            this.button1.Size = new System.Drawing.Size(37, 32);
             this.button1.TabIndex = 4;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = false;
@@ -97,7 +97,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(283, 10);
+            this.lblTitle.Location = new System.Drawing.Point(3, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(362, 28);
             this.lblTitle.TabIndex = 4;
@@ -118,7 +118,7 @@
             this.panelside.Controls.Add(this.btnCourses);
             this.panelside.Controls.Add(this.btnPayments);
             this.panelside.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelside.Location = new System.Drawing.Point(0, 49);
+            this.panelside.Location = new System.Drawing.Point(0, 0);
             this.panelside.Margin = new System.Windows.Forms.Padding(4);
             this.panelside.Name = "panelside";
             this.panelside.Size = new System.Drawing.Size(267, 777);
@@ -339,10 +339,10 @@
             // mainpanel
             // 
             this.mainpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainpanel.Location = new System.Drawing.Point(267, 49);
+            this.mainpanel.Location = new System.Drawing.Point(0, 0);
             this.mainpanel.Margin = new System.Windows.Forms.Padding(4);
             this.mainpanel.Name = "mainpanel";
-            this.mainpanel.Size = new System.Drawing.Size(1049, 777);
+            this.mainpanel.Size = new System.Drawing.Size(1420, 777);
             this.mainpanel.TabIndex = 5;
             // 
             // timer1
@@ -370,17 +370,17 @@
             // 
             // panelheader
             // 
-            this.panelheader.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.panelheader.Controls.Add(this.lblUserName);
+            this.panelheader.BackColor = System.Drawing.Color.White;
             this.panelheader.Controls.Add(this.btnMinimize);
             this.panelheader.Controls.Add(this.button1);
-            this.panelheader.Controls.Add(this.lblTitle);
             this.panelheader.Controls.Add(this.btnclose);
+            this.panelheader.Controls.Add(this.lblTitle);
+            this.panelheader.Controls.Add(this.lblUserName);
             this.panelheader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelheader.Location = new System.Drawing.Point(0, 0);
+            this.panelheader.Location = new System.Drawing.Point(267, 0);
             this.panelheader.Margin = new System.Windows.Forms.Padding(4);
             this.panelheader.Name = "panelheader";
-            this.panelheader.Size = new System.Drawing.Size(1316, 49);
+            this.panelheader.Size = new System.Drawing.Size(1153, 49);
             this.panelheader.TabIndex = 3;
             this.panelheader.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelheader_MouseDown);
             // 
@@ -388,7 +388,7 @@
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(843, 16);
+            this.lblUserName.Location = new System.Drawing.Point(635, 8);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(91, 20);
             this.lblUserName.TabIndex = 6;
@@ -398,10 +398,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1316, 826);
-            this.Controls.Add(this.mainpanel);
-            this.Controls.Add(this.panelside);
+            this.ClientSize = new System.Drawing.Size(1420, 777);
             this.Controls.Add(this.panelheader);
+            this.Controls.Add(this.panelside);
+            this.Controls.Add(this.mainpanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

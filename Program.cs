@@ -17,7 +17,7 @@ namespace Training_Center_Management_System
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmMain());
             ///  full man 
         }
     }

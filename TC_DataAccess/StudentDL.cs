@@ -51,7 +51,7 @@ namespace TC_DataAccess
         }
 
         public static bool GetStudentInfoByStudentID(int StudentID, ref string FullName,ref string Phone
-               ,ref string Email,ref DateTime DataOfBrith,ref DateTime RegistrationDate)
+               ,ref string Email,ref DateTime DataOfBrith, ref DateTime RegistrationDate)
         {
             bool isFound = false;
 
@@ -74,9 +74,9 @@ namespace TC_DataAccess
                     isFound = true;
                     FullName = (string)reader["FullName"];
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Phone"];
+                    Email = (string)reader["Email"];
                     RegistrationDate = (DateTime)reader["RegistrationDate"];
-                    DataOfBrith = (DateTime)reader["DataOfBrith"];
+                    DataOfBrith = (DateTime)reader["DateOfBirth"];
 
                 }
                 else
@@ -126,7 +126,7 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
                     Phone = (string)reader["Phone"];
-                    Email = (string)reader["Phone"];
+                    Email = (string)reader["Email"];
                     RegistrationDate = (DateTime)reader["RegistrationDate"];
                     DataOfBrith = (DateTime)reader["DataOfBrith"];
                 }
@@ -178,7 +178,7 @@ namespace TC_DataAccess
                     isFound = true;
                     FullName = (string)reader["FullName"];
                     StudentID = (int)reader["StudentID"];
-                    Email = (string)reader["Phone"];
+                    Email = (string)reader["Email"];
                     RegistrationDate = (DateTime)reader["RegistrationDate"];
                     DataOfBrith = (DateTime)reader["DataOfBrith"];
 
@@ -208,22 +208,22 @@ namespace TC_DataAccess
         }
 
         public static int AddNewStudent(string FullName, string Phone
-               , string Email,DateTime DataOfBrith,DateTime RegistrationDate)
+               , string Email,DateTime DataOfBrith, DateTime RegistrationDate)
         {
             int StudentID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Students (FullName,Phone,Phone,DataOfBrith,RegistrationDate)
-                             VALUES (@FullName,@Phone,@Phone,@DataOfBrith,@RegistrationDate);
+            string query = @"INSERT INTO Students (FullName,Phone,Email,DateOfBirth,RegistrationDate)
+                             VALUES (@FullName,@Phone,@Email,@DateOfBirth,@RegistrationDate);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@FullName", FullName);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Phone", Email);
-            command.Parameters.AddWithValue("@DataOfBrith", DataOfBrith);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@DateOfBirth", DataOfBrith);
             command.Parameters.AddWithValue("@RegistrationDate", RegistrationDate);
 
             try
@@ -253,28 +253,26 @@ namespace TC_DataAccess
         }
 
         public static bool UpdateStudent(int StudentID,string FullName, string Phone
-               , string Email, DateTime DataOfBrith, DateTime RegistrationDate)
+               , string Email, DateTime DateOfBrith)
         {
 
             int rowsAffected = 0;
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"Update  Student  
+            string query = @"Update  Students  
                             set 
                                 FullName = @FullName,
                                 Phone = @Phone,
-                                DataOfBrith = @DataOfBrith,
-                                RegistrationDate = @RegistrationDate,
-                                Phone = @Phone
+                                DateOfBirth = @DateOfBirth,
+                                Email = @Email
                                 where StudentID = @StudentID";
 
             SqlCommand command = new SqlCommand(query, connection);
-
+            command.Parameters.AddWithValue("@StudentID", StudentID);
             command.Parameters.AddWithValue("@FullName", FullName);
             command.Parameters.AddWithValue("@Phone", Phone);
-            command.Parameters.AddWithValue("@Phone", Email);
-            command.Parameters.AddWithValue("@DataOfBrith", DataOfBrith);
-            command.Parameters.AddWithValue("@RegistrationDate", RegistrationDate);
+            command.Parameters.AddWithValue("@Email", Email);
+            command.Parameters.AddWithValue("@DateOfBirth", DateOfBrith);
 
 
 
@@ -298,7 +296,7 @@ namespace TC_DataAccess
             return (rowsAffected > 0);
         }
 
-        public static bool DeleteUser(int StudentID)
+        public static bool DeleteStudent(int StudentID)
         {
 
             int rowsAffected = 0;
@@ -340,7 +338,7 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT Found=1 FROM Students WHERE Phone = @Phone";
+            string query = "SELECT Found=1 FROM Students WHERE Email = @Email";
 
             SqlCommand command = new SqlCommand(query, connection);
 

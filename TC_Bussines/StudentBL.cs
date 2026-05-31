@@ -114,7 +114,7 @@ namespace TC_Bussines
                 return false;
             }
 
-            if (IsStudentPhoneExist(Phone))
+            if (IsStudentPhoneExist(Phone) && Mode==enMode.AddNew)
             {
                 ErrorMessage = "Phone already exists.";
                 return false;
@@ -156,8 +156,8 @@ namespace TC_Bussines
                 this.FullName,
                 this.Phone,
                 this.Email,
-                this.DataOfBrith,
-                this.RegistrationDate);
+                this.DataOfBrith
+                );
 
         }
 
@@ -201,7 +201,7 @@ namespace TC_Bussines
             if (EnrollmentBL.IsStudentEnrolled(ID))
                 return false;
 
-            return StudentDL.DeleteUser(ID);
+            return StudentDL.DeleteStudent(ID);
         }
 
         public static bool IsStudentEmailExist(string Email)
