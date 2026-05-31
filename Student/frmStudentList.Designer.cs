@@ -38,7 +38,11 @@
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudents)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbFilterBy
@@ -53,7 +57,7 @@
             "Phone",
             "Student Name",
             "Email"});
-            this.cbFilterBy.Location = new System.Drawing.Point(593, 55);
+            this.cbFilterBy.Location = new System.Drawing.Point(343, 101);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
             this.cbFilterBy.TabIndex = 113;
@@ -63,30 +67,33 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(489, 51);
+            this.label1.Location = new System.Drawing.Point(239, 96);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 112;
             this.label1.Text = "Filter By:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // lblRecordsCount
             // 
             this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(177, 613);
+            this.lblRecordsCount.Location = new System.Drawing.Point(316, 517);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(21, 16);
             this.lblRecordsCount.TabIndex = 111;
             this.lblRecordsCount.Text = "??";
+            this.lblRecordsCount.Click += new System.EventHandler(this.lblRecordsCount_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 604);
+            this.label2.Location = new System.Drawing.Point(176, 508);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 110;
             this.label2.Text = "# Records:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // DGVStudents
             // 
@@ -94,21 +101,22 @@
             this.DGVStudents.AllowUserToDeleteRows = false;
             this.DGVStudents.BackgroundColor = System.Drawing.Color.White;
             this.DGVStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVStudents.Location = new System.Drawing.Point(30, 239);
+            this.DGVStudents.Location = new System.Drawing.Point(181, 168);
             this.DGVStudents.Name = "DGVStudents";
             this.DGVStudents.ReadOnly = true;
             this.DGVStudents.RowHeadersWidth = 51;
             this.DGVStudents.RowTemplate.Height = 24;
-            this.DGVStudents.Size = new System.Drawing.Size(1042, 323);
+            this.DGVStudents.Size = new System.Drawing.Size(914, 323);
             this.DGVStudents.TabIndex = 109;
+            this.DGVStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVStudents_CellContentClick);
             // 
             // txtSearch
             // 
-            this.txtSearch.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.txtSearch.Location = new System.Drawing.Point(810, 48);
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.Location = new System.Drawing.Point(580, 101);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(246, 36);
+            this.txtSearch.Size = new System.Drawing.Size(246, 24);
             this.txtSearch.TabIndex = 108;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
@@ -117,7 +125,7 @@
             this.btnView.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnView.Image = global::Training_Center_Management_System.Properties.Resources.icons8_view_32;
             this.btnView.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnView.Location = new System.Drawing.Point(212, 28);
+            this.btnView.Location = new System.Drawing.Point(13, 283);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(91, 67);
             this.btnView.TabIndex = 107;
@@ -131,7 +139,7 @@
             this.btnAddStudent.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddStudent.Image = global::Training_Center_Management_System.Properties.Resources.icons8_add_32;
             this.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddStudent.Location = new System.Drawing.Point(309, 28);
+            this.btnAddStudent.Location = new System.Drawing.Point(13, 367);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(91, 67);
             this.btnAddStudent.TabIndex = 104;
@@ -145,7 +153,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnDelete.Image = global::Training_Center_Management_System.Properties.Resources.icons8_delete_32;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(115, 28);
+            this.btnDelete.Location = new System.Drawing.Point(13, 194);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 67);
             this.btnDelete.TabIndex = 106;
@@ -159,7 +167,7 @@
             this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button3.Image = global::Training_Center_Management_System.Properties.Resources.icons8_edit_32;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(18, 28);
+            this.button3.Location = new System.Drawing.Point(13, 107);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 67);
             this.button3.TabIndex = 105;
@@ -168,12 +176,51 @@
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Image = global::Training_Center_Management_System.Properties.Resources.Close_32;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(969, 499);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(126, 37);
+            this.btnClose.TabIndex = 114;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1097, 66);
+            this.panel1.TabIndex = 115;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(476, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(186, 41);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Student List";
+            // 
             // frmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1097, 638);
+            this.ClientSize = new System.Drawing.Size(1097, 553);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblRecordsCount);
@@ -187,9 +234,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmStudentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmStudentList";
+            this.Text = "Student List";
             this.Load += new System.EventHandler(this.frmStudentList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DGVStudents)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -207,5 +256,8 @@
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }

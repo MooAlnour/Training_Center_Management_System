@@ -52,6 +52,12 @@
     <Compile Include="Course\Control\ucCourse.Designer.cs">
       <DependentUpon>ucCourse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course\frmCoursesList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\frmCoursesList.Designer.cs">
+      <DependentUpon>frmCoursesList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\Control\ucEnrollment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -104,12 +110,6 @@
     <Compile Include="Reports\Control\ucReport.Designer.cs">
       <DependentUpon>ucReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Student\Control\ucStudent.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Student\Control\ucStudent.Designer.cs">
-      <DependentUpon>ucStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="Student\frmAddEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +137,9 @@
     <EmbeddedResource Include="Course\Control\ucCourse.resx">
       <DependentUpon>ucCourse.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Course\frmCoursesList.resx">
+      <DependentUpon>frmCoursesList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\Control\ucEnrollment.resx">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,9 +165,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\Control\ucReport.resx">
       <DependentUpon>ucReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Student\Control\ucStudent.resx">
-      <DependentUpon>ucStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\frmAddEditStudent.resx">
       <DependentUpon>frmAddEditStudent.cs</DependentUpon>
@@ -232,6 +232,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Student\Control\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -35,10 +35,12 @@
             this.btnclose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.btnReports = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnReports = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btndashbaord = new System.Windows.Forms.Button();
@@ -46,9 +48,7 @@
             this.btnEnrollments = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnPayments = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelheader.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -146,24 +146,6 @@
             this.lblUserName.Text = "username";
             this.lblUserName.Click += new System.EventHandler(this.lblUserName_Click);
             // 
-            // btnReports
-            // 
-            this.btnReports.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnReports.FlatAppearance.BorderSize = 0;
-            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReports.ForeColor = System.Drawing.Color.White;
-            this.btnReports.Image = global::Training_Center_Management_System.Properties.Resources.icons8_report_32;
-            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(822, 347);
-            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
-            this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(267, 75);
-            this.btnReports.TabIndex = 16;
-            this.btnReports.Text = "REPORTS";
-            this.btnReports.UseVisualStyleBackColor = false;
-            // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -172,9 +154,9 @@
             this.groupBox1.Controls.Add(this.lblDate);
             this.groupBox1.Controls.Add(this.lblTimer);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 654);
+            this.groupBox1.Location = new System.Drawing.Point(0, 653);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1420, 109);
+            this.groupBox1.Size = new System.Drawing.Size(1420, 110);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -199,6 +181,41 @@
             this.lblTimer.Size = new System.Drawing.Size(181, 38);
             this.lblTimer.TabIndex = 1;
             this.lblTimer.Text = "00:00:00 PM";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(772, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(251, 46);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Welcom Back :";
+            // 
+            // btnReports
+            // 
+            this.btnReports.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnReports.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnReports.FlatAppearance.BorderSize = 0;
+            this.btnReports.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReports.ForeColor = System.Drawing.Color.White;
+            this.btnReports.Image = global::Training_Center_Management_System.Properties.Resources.icons8_report_32;
+            this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReports.Location = new System.Drawing.Point(822, 347);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(4);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(267, 75);
+            this.btnReports.TabIndex = 16;
+            this.btnReports.Text = "REPORTS";
+            this.btnReports.UseVisualStyleBackColor = false;
             // 
             // btnStudents
             // 
@@ -327,12 +344,6 @@
             this.btnPayments.Text = "PAYMENTS";
             this.btnPayments.UseVisualStyleBackColor = false;
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._3778120;
@@ -342,17 +353,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(772, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 46);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Welcom Back :";
             // 
             // frmMain
             // 
