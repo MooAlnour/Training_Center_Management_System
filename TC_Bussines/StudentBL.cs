@@ -12,6 +12,7 @@ namespace TC_Bussines
     {
 
         public enum enMode { AddNew = 0, Update = 1 };
+
         public enMode Mode = enMode.AddNew;
 
         public int StudentID { set; get; }
@@ -20,6 +21,8 @@ namespace TC_Bussines
         public string Email { set; get; }
         public DateTime DataOfBrith { set; get; }
         public DateTime RegistrationDate { set; get; }
+
+        public EnrollmentBL EnrollmentInfo;
 
         public StudentBL()
         {
@@ -37,6 +40,7 @@ namespace TC_Bussines
             string email, DateTime dataOfBrith, DateTime registrationDate)
         {
             this.StudentID = studentID;
+            EnrollmentInfo = EnrollmentBL.FindByStudentID(StudentID);
             this.FullName = fullName;
             this.Phone = phone;
             this.Email = email;
@@ -214,6 +218,19 @@ namespace TC_Bussines
             return StudentDL.IsPhoneExist(Phone);
         }
 
+        public DataTable GetStudentEnrollment()
+        {
+            return EnrollmentDL.GetEnrollmentByStudentID(StudentID);
+        }
+
+        public DataTable GetStudentPayment()
+        {
+            if (EnrollmentInfo != null)
+            {
+                return PaymentDL.GetPaymentByEnrollmentID(EnrollmentInfo.EnrollmentID);
+            }
+            return PaymentDL.GetPaymentByEnrollmentID(-1);
+        }
 
     }
 }

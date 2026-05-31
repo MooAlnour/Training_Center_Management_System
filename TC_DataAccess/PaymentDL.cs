@@ -49,6 +49,46 @@ namespace TC_DataAccess
             return dt;
 
         }
+        public static DataTable GetPaymentByEnrollmentID(int EnrollmentID)
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = $"select Payments.Amount,Method, PaymentDate from Payments where EnrollmentID=@EnrollmentID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@EnrollmentID", EnrollmentID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
 
         public static bool GetPaymentInfoByPaymentID(int PaymentID, ref int EnrollmentID, ref decimal Amount
             , ref DateTime PaymentDate, ref string Method, ref string Notes)

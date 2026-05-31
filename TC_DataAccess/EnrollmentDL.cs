@@ -49,6 +49,46 @@ namespace TC_DataAccess
             return dt;
 
         }
+        public static DataTable GetEnrollmentByStudentID(int StudentID)
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = $"Enrollments.CourseID, Status, Grade, EnrollmentDate from Enrollments where StudentID=@StudentID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
 
         public static bool GetEnrollmentInfoByEnrollmentID(int EnrollmentID, ref int StudentID, ref int CourseID
             , ref DateTime EnrollmentDate, ref decimal Grade, ref byte Status)

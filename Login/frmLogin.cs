@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TC_Bussines;
 using Training_Center_Management_System.Global_Classes;
+using Training_Center_Management_System.Main;
 
 namespace Training_Center_Management_System.Login
 {
