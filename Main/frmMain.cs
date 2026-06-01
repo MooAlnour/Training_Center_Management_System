@@ -13,6 +13,7 @@ using Training_Center_Management_System.Enrollment;
 using Training_Center_Management_System.Global_Classes;
 using Training_Center_Management_System.Login;
 using Training_Center_Management_System.Student;
+using Training_Center_Management_System.Users;
 
 namespace Training_Center_Management_System.Main
 {
@@ -95,6 +96,12 @@ namespace Training_Center_Management_System.Main
         {
             frmEnrollmentsList enrollmentsList = new frmEnrollmentsList();
             enrollmentsList.ShowDialog();
+        }
+
+        private void btnUsers_Click(object sender, EventArgs e)
+        {
+            frmUserList frmUser = new frmUserList();
+            frmUser.ShowDialog();
         }
     }
 }

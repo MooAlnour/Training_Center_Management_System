@@ -16,7 +16,7 @@ namespace TC_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Users";
+            string query = "select Users.UserID,\r\n       Username,\r\n       Role,\r\n       IsActive\r\nfrom Users";
 
             SqlCommand command = new SqlCommand(query, connection);
 

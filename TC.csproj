@@ -76,6 +76,12 @@
     <Compile Include="Enrollment\Control\ucEnrollment.Designer.cs">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enrollment\frmEnrollmentAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Enrollment\frmEnrollmentAddEdit.Designer.cs">
+      <DependentUpon>frmEnrollmentAddEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\frmEnrollmentsList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,12 @@
     <Compile Include="Users\Control\ucUsers.Designer.cs">
       <DependentUpon>ucUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Users\frmUserList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Users\frmUserList.Designer.cs">
+      <DependentUpon>frmUserList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Course\Control\ucCourse.resx">
       <DependentUpon>ucCourse.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\Control\ucEnrollment.resx">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Enrollment\frmEnrollmentAddEdit.resx">
+      <DependentUpon>frmEnrollmentAddEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\frmEnrollmentsList.resx">
       <DependentUpon>frmEnrollmentsList.cs</DependentUpon>
@@ -204,6 +219,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Users\Control\ucUsers.resx">
       <DependentUpon>ucUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Users\frmUserList.resx">
+      <DependentUpon>frmUserList.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

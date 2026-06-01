@@ -172,5 +172,15 @@ namespace Training_Center_Management_System.Course
                 }
             }
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
+        }
     }
 }

@@ -300,6 +300,7 @@
             this.btnUsers.TabIndex = 14;
             this.btnUsers.Text = "USERS";
             this.btnUsers.UseVisualStyleBackColor = false;
+            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
             // btnEnrollments
             // 
