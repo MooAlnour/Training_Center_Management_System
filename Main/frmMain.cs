@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Training_Center_Management_System.Course;
 using Training_Center_Management_System.Global_Classes;
 using Training_Center_Management_System.Student;
 
@@ -70,6 +71,12 @@ namespace Training_Center_Management_System.Main
         private void lblUserName_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCourses_Click(object sender, EventArgs e)
+        {
+            frmCoursesList frm = new frmCoursesList();
+            frm.ShowDialog();
         }
     }
 }

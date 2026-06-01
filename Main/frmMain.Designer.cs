@@ -30,16 +30,17 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelheader = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnclose = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnStudents = new System.Windows.Forms.Button();
             this.btnLogout = new System.Windows.Forms.Button();
@@ -48,10 +49,9 @@
             this.btnEnrollments = new System.Windows.Forms.Button();
             this.btnCourses = new System.Windows.Forms.Button();
             this.btnPayments = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelheader.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelheader
@@ -68,6 +68,16 @@
             this.panelheader.Name = "panelheader";
             this.panelheader.Size = new System.Drawing.Size(1420, 103);
             this.panelheader.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._3778120;
+            this.pictureBox1.Location = new System.Drawing.Point(77, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(138, 81);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // btnMinimize
             // 
@@ -160,6 +170,17 @@
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(772, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(245, 45);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Welcom Back :";
+            // 
             // lblDate
             // 
             this.lblDate.AutoSize = true;
@@ -187,17 +208,6 @@
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(772, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 46);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Welcom Back :";
             // 
             // btnReports
             // 
@@ -325,6 +335,7 @@
             this.btnCourses.TabIndex = 10;
             this.btnCourses.Text = "COURSES";
             this.btnCourses.UseVisualStyleBackColor = false;
+            this.btnCourses.Click += new System.EventHandler(this.btnCourses_Click);
             // 
             // btnPayments
             // 
@@ -343,16 +354,6 @@
             this.btnPayments.TabIndex = 13;
             this.btnPayments.Text = "PAYMENTS";
             this.btnPayments.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources._3778120;
-            this.pictureBox1.Location = new System.Drawing.Point(77, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(138, 81);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
             // 
             // frmMain
             // 
@@ -376,9 +377,9 @@
             this.Load += new System.EventHandler(this.frmMainn_Load);
             this.panelheader.ResumeLayout(false);
             this.panelheader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

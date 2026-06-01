@@ -62,9 +62,9 @@
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(476, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 41);
+            this.label3.Size = new System.Drawing.Size(184, 41);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Student List";
+            this.label3.Text = "Courses List";
             // 
             // cbFilterBy
             // 
@@ -74,14 +74,14 @@
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
-            "Student ID",
-            "Phone",
-            "Student Name",
-            "Email"});
+            "Course ID",
+            "Price",
+            "Title"});
             this.cbFilterBy.Location = new System.Drawing.Point(483, 97);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
             this.cbFilterBy.TabIndex = 119;
+            this.cbFilterBy.SelectedIndexChanged += new System.EventHandler(this.cbFilterBy_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -101,6 +101,7 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(246, 24);
             this.txtSearch.TabIndex = 117;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // dgvCourses
             // 
@@ -129,6 +130,7 @@
             this.btnClose.TabIndex = 121;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblRecordsCount
             // 
