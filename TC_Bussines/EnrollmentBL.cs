@@ -236,7 +236,7 @@ namespace TC_Bussines
            
              return EnrollmentDL.IsStudentEnrolledInCourse(StudentID, CourseID);
             }
-        public static bool IsCourseEnrolled(int CourseID)
+            public static bool IsCourseEnrolled(int CourseID)
         {
             return EnrollmentDL.IsCourseEnrolled(CourseID);
         }

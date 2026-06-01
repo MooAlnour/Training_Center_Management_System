@@ -183,6 +183,10 @@ namespace TC_Bussines
                 return CourseDL.GetAllCourses();
             }
 
+        public DataTable GetAllStudentEnrollment()
+        {
+            return EnrollmentDL.GetEnrollmentByCourseID(CourseID);
+        }
             public static bool DeleteCourse(int ID, ref string ErrorMessage)
             {
             if (EnrollmentBL.IsCourseEnrolled(ID))
@@ -206,7 +210,6 @@ namespace TC_Bussines
             {
             return CourseDL.IsCourseActive(CourseID);
             }
-
             public bool Cancel()
 
       
@@ -216,7 +219,6 @@ namespace TC_Bussines
 
             return CourseDL.UpdateStatus(CourseID, 3);
         }
-
             public bool SetComplete()
 
         {

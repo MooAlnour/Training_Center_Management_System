@@ -353,6 +353,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmAddEditCourse";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAddEditCourse";
             this.Load += new System.EventHandler(this.frmAddEditCourse_Load);
             this.panel1.ResumeLayout(false);

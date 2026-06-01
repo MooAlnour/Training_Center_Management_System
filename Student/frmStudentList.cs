@@ -69,19 +69,34 @@ namespace Training_Center_Management_System.Student
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int StudentID = (int)DGVStudents.CurrentRow.Cells[0].Value;
+            string StudentName = DGVStudents.CurrentRow.Cells[1].Value.ToString();
+            DialogResult Result = MessageBox.Show(
+                $"Are you sure you want to delete Student Name = "+ StudentName,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
 
-            MessageBox.Show($"Are you sare you want to delete this {StudentID}", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            if (StudentBL.DeleteStudent(StudentID))
+            if (Result == DialogResult.Yes)
             {
-                MessageBox.Show("Student has been deleted successfully", "Deleted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (StudentBL.DeleteStudent(StudentID))
+                {
+                    MessageBox.Show(
+                        "Student has been deleted successfully.",
+                        "Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
 
-                frmStudentList_Load(null, null);
+                    frmStudentList_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Student was not deleted because there is related data.",
+                        "Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
             }
-
-            else
-                MessageBox.Show("Student is not delted due to data connected to it.", "Faild", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
         }
 
         private void button3_Click(object sender, EventArgs e)

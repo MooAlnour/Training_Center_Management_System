@@ -55,10 +55,10 @@ namespace TC_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = $"Enrollments.CourseID, Status, Grade, EnrollmentDate from Enrollments where StudentID=@StudentID";
+            string query = $"Enrollments.CourseID, Status, Grade, EnrollmentDate from Enrollments where CourseID=@CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
 
             try
             {
@@ -90,6 +90,48 @@ namespace TC_DataAccess
 
         }
 
+        public static DataTable GetEnrollmentByCourseID(int CourseID)
+        {
+
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = $"SELECT \r\n    Students.FullName,\r\n    Enrollments.Status,\r\n    Enrollments.Grade,\r\n    Enrollments.EnrollmentDate\r\nFROM Students\r\nINNER JOIN Enrollments\r\n    ON Students.StudentID = Enrollments.StudentID\r\nWHERE Enrollments.CourseID = @CourseID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@CourseID", CourseID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
+
+
         public static bool GetEnrollmentInfoByEnrollmentID(int EnrollmentID, ref int StudentID, ref int CourseID
             , ref DateTime EnrollmentDate, ref decimal Grade, ref byte Status)
         {
@@ -97,11 +139,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Enrollments WHERE StudentID = @StudentID";
+            string query = "SELECT * FROM Enrollments WHERE CourseID = @CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", EnrollmentID);
+            command.Parameters.AddWithValue("@CourseID", EnrollmentID);
 
             try
             {
@@ -113,7 +155,7 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    StudentID = (int)reader["StudentID"];
+                    StudentID = (int)reader["CourseID"];
                     CourseID = (int)reader["CourseID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
@@ -151,11 +193,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Enrollments WHERE StudentID = @StudentID";
+            string query = "SELECT * FROM Enrollments WHERE CourseID = @CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
 
             try
             {
@@ -167,7 +209,7 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    EnrollmentID = (int)reader["StudentID"];
+                    EnrollmentID = (int)reader["CourseID"];
                     CourseID = (int)reader["CourseID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
@@ -221,8 +263,8 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    EnrollmentID = (int)reader["StudentID"];
-                    StudentID = (int)reader["StudentID"];
+                    EnrollmentID = (int)reader["CourseID"];
+                    StudentID = (int)reader["CourseID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
                     Status = (byte)reader["Status"];
@@ -259,13 +301,13 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Enrollments (StudentID,CourseID,EnrollmentDate,Grade,Status)
-                     VALUES (@StudentID,@CourseID,@EnrollmentDate,@Grade,@Status);
+            string query = @"INSERT INTO Enrollments (CourseID,CourseID,EnrollmentDate,Grade,Status)
+                     VALUES (@CourseID,@CourseID,@EnrollmentDate,@Grade,@Status);
                      SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
             command.Parameters.AddWithValue("@EnrollmentDate", EnrollmentDate);
             command.Parameters.AddWithValue("@Grade", Grade);
@@ -306,17 +348,17 @@ namespace TC_DataAccess
 
             string query = @"Update Enrollments
                     set
-                        StudentID = @StudentID,
+                        CourseID = @CourseID,
                         CourseID = @CourseID,
                         EnrollmentDate = @EnrollmentDate,
                         Grade = @Grade,
                         Status = @Status
-                        where StudentID = @StudentID";
+                        where CourseID = @CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", EnrollmentID);
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", EnrollmentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
             command.Parameters.AddWithValue("@EnrollmentDate", EnrollmentDate);
             command.Parameters.AddWithValue("@Grade", Grade);
@@ -350,11 +392,11 @@ namespace TC_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"Delete Enrollments
-                        where StudentID = @StudentID";
+                        where CourseID = @CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", EnrollmentID);
+            command.Parameters.AddWithValue("@CourseID", EnrollmentID);
 
             try
             {
@@ -449,11 +491,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT Found=1 FROM Enrollments WHERE StudentID = @StudentID";
+            string query = "SELECT Found=1 FROM Enrollments WHERE CourseID = @CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
 
             try
             {
@@ -482,11 +524,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT Found=1 FROM Enrollments WHERE StudentID = @StudentID and CourseID=@CourseID";
+            string query = "SELECT Found=1 FROM Enrollments WHERE CourseID = @CourseID and CourseID=@CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@StudentID", StudentID);
+            command.Parameters.AddWithValue("@CourseID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
 
             try

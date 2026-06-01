@@ -14,6 +14,7 @@ namespace Training_Center_Management_System.Course
 {
     public partial class frmCoursesList: Form
     {
+        string ErrorMasseage = "";
         private DataTable _dtCourse;
 
         public frmCoursesList()
@@ -128,6 +129,48 @@ namespace Training_Center_Management_System.Course
             frmAdd.ShowDialog();
             frmCoursesList_Load(null, null);
 
+        }
+
+        private void btnViewDetails_Click(object sender, EventArgs e)
+        {
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            frmShowCourseDetails frmShow = new frmShowCourseDetails(CourseID);
+            frmShow.ShowDialog();
+            frmCoursesList_Load(null, null);
+
+        }
+
+        private void btnDeleteCourse_Click(object sender, EventArgs e)
+        {
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            string CourseName = dgvCourses.CurrentRow.Cells[1].Value.ToString();
+            DialogResult Result = MessageBox.Show(
+                $"Are you sure you want to delete Course Name = " + CourseName,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (Result == DialogResult.Yes)
+            {
+                if (CourseBL.DeleteCourse(CourseID,ref ErrorMasseage))
+                {
+                    MessageBox.Show(
+                        "Course has been deleted successfully.",
+                        "Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    frmCoursesList_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Course was not deleted because " + ErrorMasseage,
+                        "Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

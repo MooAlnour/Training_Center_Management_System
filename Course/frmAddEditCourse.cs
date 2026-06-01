@@ -119,7 +119,7 @@ namespace Training_Center_Management_System.Course
 
             if (CourseBL.IsCourseExist(txtCourseTitle.Text.Trim()))
             {
-                e.Cancel = true;
+               // e.Cancel = true;
                 errorProvider1.SetError(txtCourseTitle, " Course Title is used for another Course!");
 
             }

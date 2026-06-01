@@ -148,6 +148,7 @@
             this.btnViewDetails.Text = "View";
             this.btnViewDetails.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnViewDetails.UseVisualStyleBackColor = false;
+            this.btnViewDetails.Click += new System.EventHandler(this.btnViewDetails_Click);
             // 
             // btnAddCourse
             // 
@@ -175,6 +176,7 @@
             this.btnDeleteCourse.Text = "Delete";
             this.btnDeleteCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteCourse.UseVisualStyleBackColor = false;
+            this.btnDeleteCourse.Click += new System.EventHandler(this.btnDeleteCourse_Click);
             // 
             // btnEditCourse
             // 
@@ -224,6 +226,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCoursesList";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCoursesList";
             this.Load += new System.EventHandler(this.frmCoursesList_Load);
             this.panel1.ResumeLayout(false);

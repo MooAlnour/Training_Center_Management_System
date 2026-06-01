@@ -64,6 +64,12 @@
     <Compile Include="Course\frmCoursesList.Designer.cs">
       <DependentUpon>frmCoursesList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Course\frmShowCourseDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Course\frmShowCourseDetails.Designer.cs">
+      <DependentUpon>frmShowCourseDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Enrollment\Control\ucEnrollment.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Course\frmCoursesList.resx">
       <DependentUpon>frmCoursesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Course\frmShowCourseDetails.resx">
+      <DependentUpon>frmShowCourseDetails.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Enrollment\Control\ucEnrollment.resx">
       <DependentUpon>ucEnrollment.cs</DependentUpon>
