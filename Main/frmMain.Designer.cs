@@ -318,6 +318,7 @@
             this.btnEnrollments.TabIndex = 12;
             this.btnEnrollments.Text = "ENROLLMENTS";
             this.btnEnrollments.UseVisualStyleBackColor = false;
+            this.btnEnrollments.Click += new System.EventHandler(this.btnEnrollments_Click);
             // 
             // btnCourses
             // 

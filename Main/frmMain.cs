@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Training_Center_Management_System.Course;
+using Training_Center_Management_System.Enrollment;
 using Training_Center_Management_System.Global_Classes;
 using Training_Center_Management_System.Login;
 using Training_Center_Management_System.Student;
@@ -88,6 +89,12 @@ namespace Training_Center_Management_System.Main
             clsGlobal.CurrentUser = null;
             //_frmLogin.Show();
             this.Close();
+        }
+
+        private void btnEnrollments_Click(object sender, EventArgs e)
+        {
+            frmEnrollmentsList enrollmentsList = new frmEnrollmentsList();
+            enrollmentsList.ShowDialog();
         }
     }
 }
