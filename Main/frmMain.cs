@@ -10,18 +10,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Training_Center_Management_System.Course;
 using Training_Center_Management_System.Global_Classes;
+using Training_Center_Management_System.Login;
 using Training_Center_Management_System.Student;
 
 namespace Training_Center_Management_System.Main
 {
     public partial class frmMain: Form
     {
+        frmLogin _frmLogin;
+
         public frmMain()
         {
             InitializeComponent();
             panelheader.MouseDown += panelheader_MouseDown;
             lblTitle.MouseDown += panelheader_MouseDown;
             timer1.Start();
+            //_frmLogin = frm;
 
         }
         [DllImport("user32.dll")]
@@ -36,7 +40,7 @@ namespace Training_Center_Management_System.Main
         }
         private void frmMainn_Load(object sender, EventArgs e)
         {
-            lblUserName.Text = clsGlobal.CurrentUser.UserName;
+          //  lblUserName.Text = clsGlobal.CurrentUser.UserName;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,6 +81,13 @@ namespace Training_Center_Management_System.Main
         {
             frmCoursesList frm = new frmCoursesList();
             frm.ShowDialog();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            clsGlobal.CurrentUser = null;
+            //_frmLogin.Show();
+            this.Close();
         }
     }
 }

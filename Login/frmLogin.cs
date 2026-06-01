@@ -87,7 +87,6 @@ namespace Training_Center_Management_System.Login
                 frmMain frm = new frmMain();
                 frm.ShowDialog();
 
-
             }
             else
             {

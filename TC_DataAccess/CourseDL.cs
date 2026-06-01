@@ -245,8 +245,7 @@ namespace TC_DataAccess
 
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
-
+                throw;
             }
 
             finally
@@ -290,8 +289,7 @@ namespace TC_DataAccess
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
-                return false;
+                throw;
             }
 
             finally

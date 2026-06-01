@@ -28,12 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rbNonActive = new System.Windows.Forms.RadioButton();
+            this.rbActive = new System.Windows.Forms.RadioButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.nudPrice = new System.Windows.Forms.NumericUpDown();
+            this.nudHours = new System.Windows.Forms.NumericUpDown();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.dtpDateOfBirth = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,25 +49,20 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtCourseTitle = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.nudHours = new System.Windows.Forms.NumericUpDown();
-            this.nudPrice = new System.Windows.Forms.NumericUpDown();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.lblCourseID = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.rbNonActive = new System.Windows.Forms.RadioButton();
-            this.rbActive = new System.Windows.Forms.RadioButton();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -94,7 +97,7 @@
             this.groupBox1.Controls.Add(this.nudHours);
             this.groupBox1.Controls.Add(this.pictureBox8);
             this.groupBox1.Controls.Add(this.pictureBox4);
-            this.groupBox1.Controls.Add(this.dtpDateOfBirth);
+            this.groupBox1.Controls.Add(this.dtpStartDate);
             this.groupBox1.Controls.Add(this.btnClose);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label4);
@@ -108,6 +111,85 @@
             this.groupBox1.Size = new System.Drawing.Size(928, 378);
             this.groupBox1.TabIndex = 118;
             this.groupBox1.TabStop = false;
+            // 
+            // rbNonActive
+            // 
+            this.rbNonActive.AutoSize = true;
+            this.rbNonActive.Location = new System.Drawing.Point(288, 284);
+            this.rbNonActive.Name = "rbNonActive";
+            this.rbNonActive.Size = new System.Drawing.Size(93, 20);
+            this.rbNonActive.TabIndex = 126;
+            this.rbNonActive.Text = "Non Active";
+            this.rbNonActive.UseVisualStyleBackColor = true;
+            // 
+            // rbActive
+            // 
+            this.rbActive.AutoSize = true;
+            this.rbActive.Checked = true;
+            this.rbActive.Location = new System.Drawing.Point(214, 284);
+            this.rbActive.Name = "rbActive";
+            this.rbActive.Size = new System.Drawing.Size(65, 20);
+            this.rbActive.TabIndex = 125;
+            this.rbActive.TabStop = true;
+            this.rbActive.Text = "Active";
+            this.rbActive.UseVisualStyleBackColor = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(19, 279);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 25);
+            this.label2.TabIndex = 124;
+            this.label2.Text = "Status:";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Training_Center_Management_System.Properties.Resources.Number_32;
+            this.pictureBox3.Location = new System.Drawing.Point(166, 108);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 123;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.Number_32;
+            this.pictureBox1.Location = new System.Drawing.Point(166, 160);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 122;
+            this.pictureBox1.TabStop = false;
+            // 
+            // nudPrice
+            // 
+            this.nudPrice.Location = new System.Drawing.Point(214, 164);
+            this.nudPrice.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.nudPrice.Name = "nudPrice";
+            this.nudPrice.Size = new System.Drawing.Size(138, 22);
+            this.nudPrice.TabIndex = 120;
+            this.nudPrice.Validating += new System.ComponentModel.CancelEventHandler(this.nudPrice_Validating);
+            // 
+            // nudHours
+            // 
+            this.nudHours.Location = new System.Drawing.Point(214, 108);
+            this.nudHours.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.nudHours.Name = "nudHours";
+            this.nudHours.Size = new System.Drawing.Size(138, 22);
+            this.nudHours.TabIndex = 119;
+            this.nudHours.Validating += new System.ComponentModel.CancelEventHandler(this.nudHours_Validating);
             // 
             // pictureBox8
             // 
@@ -129,16 +211,16 @@
             this.pictureBox4.TabIndex = 96;
             this.pictureBox4.TabStop = false;
             // 
-            // dtpDateOfBirth
+            // dtpStartDate
             // 
-            this.dtpDateOfBirth.CustomFormat = "dd/M/yyyy";
-            this.dtpDateOfBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDateOfBirth.Location = new System.Drawing.Point(214, 225);
-            this.dtpDateOfBirth.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dtpDateOfBirth.Name = "dtpDateOfBirth";
-            this.dtpDateOfBirth.Size = new System.Drawing.Size(167, 22);
-            this.dtpDateOfBirth.TabIndex = 6;
-            this.dtpDateOfBirth.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
+            this.dtpStartDate.CustomFormat = "dd/M/yyyy";
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpStartDate.Location = new System.Drawing.Point(214, 225);
+            this.dtpStartDate.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(167, 22);
+            this.dtpStartDate.TabIndex = 6;
+            this.dtpStartDate.Value = new System.DateTime(2000, 12, 31, 0, 0, 0, 0);
             // 
             // btnClose
             // 
@@ -207,6 +289,7 @@
             this.txtCourseTitle.Name = "txtCourseTitle";
             this.txtCourseTitle.Size = new System.Drawing.Size(383, 22);
             this.txtCourseTitle.TabIndex = 1;
+            this.txtCourseTitle.Validating += new System.ComponentModel.CancelEventHandler(this.txtCourseTitle_Validating);
             // 
             // btnSave
             // 
@@ -220,20 +303,7 @@
             this.btnSave.TabIndex = 14;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
-            // 
-            // nudHours
-            // 
-            this.nudHours.Location = new System.Drawing.Point(214, 108);
-            this.nudHours.Name = "nudHours";
-            this.nudHours.Size = new System.Drawing.Size(138, 22);
-            this.nudHours.TabIndex = 119;
-            // 
-            // nudPrice
-            // 
-            this.nudPrice.Location = new System.Drawing.Point(214, 164);
-            this.nudPrice.Name = "nudPrice";
-            this.nudPrice.Size = new System.Drawing.Size(138, 22);
-            this.nudPrice.TabIndex = 120;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox10
             // 
@@ -267,58 +337,9 @@
             this.label22.TabIndex = 119;
             this.label22.Text = "Course ID :";
             // 
-            // pictureBox1
+            // errorProvider1
             // 
-            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.Number_32;
-            this.pictureBox1.Location = new System.Drawing.Point(166, 160);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 122;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Training_Center_Management_System.Properties.Resources.Number_32;
-            this.pictureBox3.Location = new System.Drawing.Point(166, 108);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 123;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 279);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 25);
-            this.label2.TabIndex = 124;
-            this.label2.Text = "Status:";
-            // 
-            // rbNonActive
-            // 
-            this.rbNonActive.AutoSize = true;
-            this.rbNonActive.Location = new System.Drawing.Point(288, 284);
-            this.rbNonActive.Name = "rbNonActive";
-            this.rbNonActive.Size = new System.Drawing.Size(93, 20);
-            this.rbNonActive.TabIndex = 126;
-            this.rbNonActive.Text = "Non Active";
-            this.rbNonActive.UseVisualStyleBackColor = true;
-            // 
-            // rbActive
-            // 
-            this.rbActive.AutoSize = true;
-            this.rbActive.Checked = true;
-            this.rbActive.Location = new System.Drawing.Point(214, 284);
-            this.rbActive.Name = "rbActive";
-            this.rbActive.Size = new System.Drawing.Size(65, 20);
-            this.rbActive.TabIndex = 125;
-            this.rbActive.TabStop = true;
-            this.rbActive.Text = "Active";
-            this.rbActive.UseVisualStyleBackColor = true;
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddEditCourse
             // 
@@ -337,13 +358,14 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudHours)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPrice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,7 +379,7 @@
         private System.Windows.Forms.NumericUpDown nudHours;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.DateTimePicker dtpDateOfBirth;
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
@@ -374,5 +396,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.RadioButton rbNonActive;
         private System.Windows.Forms.RadioButton rbActive;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

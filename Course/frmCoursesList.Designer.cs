@@ -34,13 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
-            this.btnClose = new System.Windows.Forms.Button();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnEditCourse = new System.Windows.Forms.Button();
-            this.btnDeleteCourse = new System.Windows.Forms.Button();
             this.btnViewDetails = new System.Windows.Forms.Button();
             this.btnAddCourse = new System.Windows.Forms.Button();
+            this.btnDeleteCourse = new System.Windows.Forms.Button();
+            this.btnEditCourse = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
             this.SuspendLayout();
@@ -109,28 +109,13 @@
             this.dgvCourses.AllowUserToDeleteRows = false;
             this.dgvCourses.BackgroundColor = System.Drawing.Color.White;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCourses.Location = new System.Drawing.Point(171, 144);
+            this.dgvCourses.Location = new System.Drawing.Point(132, 134);
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
             this.dgvCourses.RowHeadersWidth = 51;
             this.dgvCourses.RowTemplate.Height = 24;
-            this.dgvCourses.Size = new System.Drawing.Size(914, 323);
+            this.dgvCourses.Size = new System.Drawing.Size(953, 323);
             this.dgvCourses.TabIndex = 120;
-            // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnClose.Image = global::Training_Center_Management_System.Properties.Resources.Close_32;
-            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(958, 475);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(126, 37);
-            this.btnClose.TabIndex = 121;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // lblRecordsCount
             // 
@@ -150,32 +135,6 @@
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 122;
             this.label2.Text = "# Records:";
-            // 
-            // btnEditCourse
-            // 
-            this.btnEditCourse.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnEditCourse.Image = global::Training_Center_Management_System.Properties.Resources.icons8_edit_32;
-            this.btnEditCourse.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnEditCourse.Location = new System.Drawing.Point(12, 134);
-            this.btnEditCourse.Name = "btnEditCourse";
-            this.btnEditCourse.Size = new System.Drawing.Size(91, 67);
-            this.btnEditCourse.TabIndex = 124;
-            this.btnEditCourse.Text = "Edit";
-            this.btnEditCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEditCourse.UseVisualStyleBackColor = false;
-            // 
-            // btnDeleteCourse
-            // 
-            this.btnDeleteCourse.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnDeleteCourse.Image = global::Training_Center_Management_System.Properties.Resources.icons8_delete_32;
-            this.btnDeleteCourse.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDeleteCourse.Location = new System.Drawing.Point(12, 207);
-            this.btnDeleteCourse.Name = "btnDeleteCourse";
-            this.btnDeleteCourse.Size = new System.Drawing.Size(91, 67);
-            this.btnDeleteCourse.TabIndex = 125;
-            this.btnDeleteCourse.Text = "Delete";
-            this.btnDeleteCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDeleteCourse.UseVisualStyleBackColor = false;
             // 
             // btnViewDetails
             // 
@@ -202,6 +161,49 @@
             this.btnAddCourse.Text = "Add";
             this.btnAddCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddCourse.UseVisualStyleBackColor = false;
+            this.btnAddCourse.Click += new System.EventHandler(this.btnAddCourse_Click);
+            // 
+            // btnDeleteCourse
+            // 
+            this.btnDeleteCourse.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnDeleteCourse.Image = global::Training_Center_Management_System.Properties.Resources.icons8_delete_32;
+            this.btnDeleteCourse.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDeleteCourse.Location = new System.Drawing.Point(12, 207);
+            this.btnDeleteCourse.Name = "btnDeleteCourse";
+            this.btnDeleteCourse.Size = new System.Drawing.Size(91, 67);
+            this.btnDeleteCourse.TabIndex = 125;
+            this.btnDeleteCourse.Text = "Delete";
+            this.btnDeleteCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDeleteCourse.UseVisualStyleBackColor = false;
+            // 
+            // btnEditCourse
+            // 
+            this.btnEditCourse.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnEditCourse.Image = global::Training_Center_Management_System.Properties.Resources.icons8_edit_32;
+            this.btnEditCourse.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEditCourse.Location = new System.Drawing.Point(12, 134);
+            this.btnEditCourse.Name = "btnEditCourse";
+            this.btnEditCourse.Size = new System.Drawing.Size(91, 67);
+            this.btnEditCourse.TabIndex = 124;
+            this.btnEditCourse.Text = "Edit";
+            this.btnEditCourse.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEditCourse.UseVisualStyleBackColor = false;
+            this.btnEditCourse.Click += new System.EventHandler(this.btnEditCourse_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnClose.Image = global::Training_Center_Management_System.Properties.Resources.Close_32;
+            this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnClose.Location = new System.Drawing.Point(958, 475);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(126, 37);
+            this.btnClose.TabIndex = 121;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // frmCoursesList
             // 

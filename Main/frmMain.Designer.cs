@@ -263,6 +263,7 @@
             this.btnLogout.TabIndex = 15;
             this.btnLogout.Text = "LOG OUT";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btndashbaord
             // 

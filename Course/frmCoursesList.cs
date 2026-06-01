@@ -113,5 +113,21 @@ namespace Training_Center_Management_System.Course
         {
             this.Close();
         }
+
+        private void btnAddCourse_Click(object sender, EventArgs e)
+        {
+            frmAddEditCourse frmAdd = new frmAddEditCourse();
+            frmAdd.ShowDialog();
+            frmCoursesList_Load(null, null);
+        }
+
+        private void btnEditCourse_Click(object sender, EventArgs e)
+        {
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            frmAddEditCourse frmAdd = new frmAddEditCourse(CourseID);
+            frmAdd.ShowDialog();
+            frmCoursesList_Load(null, null);
+
+        }
     }
 }

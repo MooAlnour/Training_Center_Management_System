@@ -21,14 +21,15 @@ namespace TC_Bussines
             public int Hours { set; get; }
             public decimal Price { set; get; }
             public DateTime StartDate { set; get; }
-             public enum enEnrollmentStatus
+            public enum enCourseStatus
              {
+            NonActive = 0,
             Active = 1,
             Completed = 2,
             Cancelled = 3
         };
 
-        public enEnrollmentStatus Status = enEnrollmentStatus.Active;
+             public enCourseStatus Status = enCourseStatus.Active;
 
         public CourseBL()
             {
@@ -50,7 +51,7 @@ namespace TC_Bussines
                 this.Hours = hours;
                 this.Price = price;
                 this.StartDate = startDate;
-                this.Status = (enEnrollmentStatus)status;
+                this.Status = (enCourseStatus)status;
 
                 Mode = enMode.Update;
             }
@@ -125,7 +126,7 @@ namespace TC_Bussines
 
            private bool _AddNewCourse(ref string ErrorMessage)
             {
-            if (_ValidateCourseData(ref ErrorMessage))
+            if (!_ValidateCourseData(ref ErrorMessage))
                 return false;
 
                 this.CourseID = CourseDL.AddNewCourse(this.Title,
