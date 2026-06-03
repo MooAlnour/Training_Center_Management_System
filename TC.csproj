@@ -134,6 +134,18 @@
     <Compile Include="Reports\Control\ucReport.Designer.cs">
       <DependentUpon>ucReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\Control\ctrlStudentCardWithFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\Control\ctrlStudentCardWithFilter.Designer.cs">
+      <DependentUpon>ctrlStudentCardWithFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Student\Control\ctrStudentInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Student\Control\ctrStudentInfo.Designer.cs">
+      <DependentUpon>ctrStudentInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\frmAddEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -208,6 +220,12 @@
     <EmbeddedResource Include="Reports\Control\ucReport.resx">
       <DependentUpon>ucReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Student\Control\ctrlStudentCardWithFilter.resx">
+      <DependentUpon>ctrlStudentCardWithFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\Control\ctrStudentInfo.resx">
+      <DependentUpon>ctrStudentInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Student\frmAddEditStudent.resx">
       <DependentUpon>frmAddEditStudent.cs</DependentUpon>
     </EmbeddedResource>
@@ -279,7 +297,10 @@
     <None Include="Resources\Close 32.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Student\Control\" />
+    <None Include="Resources\AddPerson 32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchPerson1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

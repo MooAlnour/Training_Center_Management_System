@@ -70,7 +70,7 @@ namespace Training_Center_Management_System.Course
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             string FilterColumn = "";
-            //Map Selected Filter to real Column name 
+            //Map StudentSelected Filter to real Column name 
             switch (cbFilterBy.Text)
             {
                 case "Course ID":

@@ -15,6 +15,10 @@ namespace Training_Center_Management_System.Student
 {
     public partial class frmAddEditStudent: Form
     {
+        public delegate void DataBackEventHandler(object sender, int StudentID);
+
+        // Declare an event using the delegate
+        public event DataBackEventHandler DataBack;
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
         private int _StudentID = -1;
@@ -116,6 +120,7 @@ namespace Training_Center_Management_System.Student
                 //change form mode to update.
                 _Mode = enMode.Update;
                 lblTitle.Text = "Update Student";
+                DataBack?.Invoke(this, _Student.StudentID);
 
                 MessageBox.Show("Data Saved Successfully.", "Saved", MessageBoxButtons.OK, MessageBoxIcon.Information);
 

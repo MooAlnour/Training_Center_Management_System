@@ -16,5 +16,10 @@ namespace Training_Center_Management_System.Enrollment
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

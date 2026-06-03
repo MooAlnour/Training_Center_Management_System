@@ -129,7 +129,7 @@ namespace Training_Center_Management_System.Student
         {
 
             string FilterColumn = "";
-            //Map Selected Filter to real Column name 
+            //Map StudentSelected Filter to real Column name 
             switch (cbFilterBy.Text)
             {
                 case "Student ID":

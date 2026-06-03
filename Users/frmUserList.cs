@@ -81,7 +81,7 @@ namespace Training_Center_Management_System.Users
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
             string FilterColumn = "";
-            //Map Selected Filter to real Column name 
+            //Map StudentSelected Filter to real Column name 
             switch (cbFilterBy.Text)
             {
                 case "User ID":
