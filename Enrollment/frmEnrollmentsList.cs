@@ -112,5 +112,11 @@ namespace Training_Center_Management_System.Enrollment
             lblRecordsCount.Text = _dtEnrollment.Rows.Count.ToString();
 
         }
+
+        private void btnAddEnrollment_Click(object sender, EventArgs e)
+        {
+            frmEnrollmentAddEdit enrollmentAddEdit = new frmEnrollmentAddEdit();
+            enrollmentAddEdit.ShowDialog();
+        }
     }
 }

@@ -176,6 +176,7 @@
             this.btnAddEnrollment.Text = "Add";
             this.btnAddEnrollment.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddEnrollment.UseVisualStyleBackColor = false;
+            this.btnAddEnrollment.Click += new System.EventHandler(this.btnAddEnrollment_Click);
             // 
             // btnDeleteEnrollment
             // 

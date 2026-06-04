@@ -31,6 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblRegisteredDate = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblDateOfBirth = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -46,28 +49,25 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
-            this.lblRegisteredDate = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tbcEnrollments = new System.Windows.Forms.TabControl();
             this.tbPayments = new System.Windows.Forms.TabPage();
+            this.dgvPayments = new System.Windows.Forms.DataGridView();
             this.tbEnrollments = new System.Windows.Forms.TabPage();
+            this.dgvEnrollments = new System.Windows.Forms.DataGridView();
             this.btnEditStudent = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.dgvPayments = new System.Windows.Forms.DataGridView();
-            this.dgvEnrollments = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tbcEnrollments.SuspendLayout();
             this.tbPayments.SuspendLayout();
-            this.tbEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).BeginInit();
+            this.tbEnrollments.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,6 +118,38 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Student Information";
+            // 
+            // lblRegisteredDate
+            // 
+            this.lblRegisteredDate.AutoSize = true;
+            this.lblRegisteredDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRegisteredDate.Location = new System.Drawing.Point(644, 164);
+            this.lblRegisteredDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRegisteredDate.Name = "lblRegisteredDate";
+            this.lblRegisteredDate.Size = new System.Drawing.Size(68, 25);
+            this.lblRegisteredDate.TabIndex = 154;
+            this.lblRegisteredDate.Text = "[????]";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.Calendar_32;
+            this.pictureBox1.Location = new System.Drawing.Point(584, 163);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 153;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(426, 164);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(128, 25);
+            this.label7.TabIndex = 152;
+            this.label7.Text = "Registered :";
             // 
             // lblPhone
             // 
@@ -286,38 +318,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // lblRegisteredDate
-            // 
-            this.lblRegisteredDate.AutoSize = true;
-            this.lblRegisteredDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegisteredDate.Location = new System.Drawing.Point(644, 164);
-            this.lblRegisteredDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRegisteredDate.Name = "lblRegisteredDate";
-            this.lblRegisteredDate.Size = new System.Drawing.Size(68, 25);
-            this.lblRegisteredDate.TabIndex = 154;
-            this.lblRegisteredDate.Text = "[????]";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Training_Center_Management_System.Properties.Resources.Calendar_32;
-            this.pictureBox1.Location = new System.Drawing.Point(584, 163);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(31, 26);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 153;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(426, 164);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 25);
-            this.label7.TabIndex = 152;
-            this.label7.Text = "Registered :";
-            // 
             // tbcEnrollments
             // 
             this.tbcEnrollments.Controls.Add(this.tbPayments);
@@ -340,6 +340,17 @@
             this.tbPayments.Text = "Payments";
             this.tbPayments.UseVisualStyleBackColor = true;
             // 
+            // dgvPayments
+            // 
+            this.dgvPayments.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPayments.Location = new System.Drawing.Point(6, 25);
+            this.dgvPayments.Name = "dgvPayments";
+            this.dgvPayments.RowHeadersWidth = 51;
+            this.dgvPayments.RowTemplate.Height = 24;
+            this.dgvPayments.Size = new System.Drawing.Size(777, 159);
+            this.dgvPayments.TabIndex = 0;
+            // 
             // tbEnrollments
             // 
             this.tbEnrollments.Controls.Add(this.dgvEnrollments);
@@ -351,6 +362,17 @@
             this.tbEnrollments.TabIndex = 1;
             this.tbEnrollments.Text = "Enrollments";
             this.tbEnrollments.UseVisualStyleBackColor = true;
+            // 
+            // dgvEnrollments
+            // 
+            this.dgvEnrollments.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEnrollments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEnrollments.Location = new System.Drawing.Point(3, 26);
+            this.dgvEnrollments.Name = "dgvEnrollments";
+            this.dgvEnrollments.RowHeadersWidth = 51;
+            this.dgvEnrollments.RowTemplate.Height = 24;
+            this.dgvEnrollments.Size = new System.Drawing.Size(777, 159);
+            this.dgvEnrollments.TabIndex = 1;
             // 
             // btnEditStudent
             // 
@@ -397,28 +419,6 @@
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dgvPayments
-            // 
-            this.dgvPayments.BackgroundColor = System.Drawing.Color.White;
-            this.dgvPayments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPayments.Location = new System.Drawing.Point(6, 25);
-            this.dgvPayments.Name = "dgvPayments";
-            this.dgvPayments.RowHeadersWidth = 51;
-            this.dgvPayments.RowTemplate.Height = 24;
-            this.dgvPayments.Size = new System.Drawing.Size(777, 159);
-            this.dgvPayments.TabIndex = 0;
-            // 
-            // dgvEnrollments
-            // 
-            this.dgvEnrollments.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEnrollments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEnrollments.Location = new System.Drawing.Point(3, 26);
-            this.dgvEnrollments.Name = "dgvEnrollments";
-            this.dgvEnrollments.RowHeadersWidth = 51;
-            this.dgvEnrollments.RowTemplate.Height = 24;
-            this.dgvEnrollments.Size = new System.Drawing.Size(777, 159);
-            this.dgvEnrollments.TabIndex = 1;
-            // 
             // frmShowStudentInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -434,21 +434,21 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowStudentInfo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Show Student Info";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.frmShowStudentInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tbcEnrollments.ResumeLayout(false);
             this.tbPayments.ResumeLayout(false);
-            this.tbEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPayments)).EndInit();
+            this.tbEnrollments.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEnrollments)).EndInit();
             this.ResumeLayout(false);
 

@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.btnAddNewPerson = new System.Windows.Forms.Button();
+            this.btnFind = new System.Windows.Forms.Button();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnAddNewPerson = new System.Windows.Forms.Button();
-            this.btnFind = new System.Windows.Forms.Button();
             this.ctrStudentInfo1 = new Training_Center_Management_System.Student.Control.ctrStudentInfo();
             this.gbFilters.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +51,30 @@
             this.gbFilters.TabIndex = 17;
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter";
+            // 
+            // btnAddNewPerson
+            // 
+            this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAddNewPerson.Image = global::Training_Center_Management_System.Properties.Resources.AddPerson_32;
+            this.btnAddNewPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddNewPerson.Location = new System.Drawing.Point(594, 20);
+            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAddNewPerson.Name = "btnAddNewPerson";
+            this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
+            this.btnAddNewPerson.TabIndex = 20;
+            this.btnAddNewPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
+            // 
+            // btnFind
+            // 
+            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFind.Image = global::Training_Center_Management_System.Properties.Resources.SearchPerson1;
+            this.btnFind.Location = new System.Drawing.Point(543, 20);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(44, 37);
+            this.btnFind.TabIndex = 18;
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // cbFilterBy
             // 
@@ -87,30 +111,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Find By:";
             // 
-            // btnAddNewPerson
-            // 
-            this.btnAddNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnAddNewPerson.Image = global::Training_Center_Management_System.Properties.Resources.AddPerson_32;
-            this.btnAddNewPerson.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAddNewPerson.Location = new System.Drawing.Point(594, 20);
-            this.btnAddNewPerson.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnAddNewPerson.Name = "btnAddNewPerson";
-            this.btnAddNewPerson.Size = new System.Drawing.Size(44, 37);
-            this.btnAddNewPerson.TabIndex = 20;
-            this.btnAddNewPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewPerson.Click += new System.EventHandler(this.btnAddNewPerson_Click);
-            // 
-            // btnFind
-            // 
-            this.btnFind.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFind.Image = global::Training_Center_Management_System.Properties.Resources.SearchPerson1;
-            this.btnFind.Location = new System.Drawing.Point(543, 20);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(44, 37);
-            this.btnFind.TabIndex = 18;
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
-            // 
             // ctrStudentInfo1
             // 
             this.ctrStudentInfo1.Location = new System.Drawing.Point(0, 86);
@@ -126,6 +126,7 @@
             this.Controls.Add(this.gbFilters);
             this.Name = "ctrlStudentCardWithFilter";
             this.Size = new System.Drawing.Size(808, 314);
+            this.Load += new System.EventHandler(this.ctrlStudentCardWithFilter_Load);
             this.gbFilters.ResumeLayout(false);
             this.gbFilters.PerformLayout();
             this.ResumeLayout(false);

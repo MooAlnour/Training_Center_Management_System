@@ -14,16 +14,17 @@ namespace Training_Center_Management_System.Student.Control
     public partial class ctrlStudentCardWithFilter: UserControl
     {
         public event Action<int> OnStudentSelected;
-        // Create a protected method to raise the event with a parameter
-        protected virtual void StudentSelected(int StudentID)
-        {
-            Action<int> handler = OnStudentSelected;
-            if (handler != null)
-            {
-                handler(StudentID); // Raise the event with the parameter
-            }
-        }
 
+        // Create a protected method to raise the event with a parameter
+
+        //protected virtual void StudentSelected(int StudentID)
+        //{
+        //    Action<int> handler = OnStudentSelected;
+        //    if (handler != null)
+        //    {
+        //        handler(StudentID); // Raise the event with the parameter
+        //    }
+        //}
 
         private bool _ShowAddStudent = true;
         public bool ShowAddStudent
@@ -89,15 +90,18 @@ namespace Training_Center_Management_System.Student.Control
                     ctrStudentInfo1.LoadStudentInfo(txtFilterValue.Text);
                     break;
             }
-            if (OnStudentSelected != null && FilterEnabled)
-                // Raise the event with a parameter
-                OnStudentSelected(ctrStudentInfo1.StudentID);
+            _StudentID = ctrStudentInfo1.StudentID;
+
+            MessageBox.Show(_StudentID.ToString());
+            //  if (OnStudentSelected != null && FilterEnabled)
+            // Raise the event with a parameter
+            DataBackEvent(this,ctrStudentInfo1.StudentID);
         }
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            txtFilterValue.Text = "";
-            txtFilterValue.Focus();
+            //txtFilterValue.Text = "";
+            //txtFilterValue.Focus();
         }
 
         private void btnFind_Click(object sender, EventArgs e)
@@ -130,7 +134,7 @@ namespace Training_Center_Management_System.Student.Control
                 btnFind.PerformClick();
             }
 
-            //this will allow only digits if person id is selected
+            //this will allow only digits if Student id is selected
             if (cbFilterBy.Text == "Student ID")
                 e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
@@ -142,5 +146,10 @@ namespace Training_Center_Management_System.Student.Control
             frmAddEdit.ShowDialog();
         }
 
+        private void ctrlStudentCardWithFilter_Load(object sender, EventArgs e)
+        {
+            cbFilterBy.SelectedIndex = 0;
+            txtFilterValue.Focus();
+        }
     }
 }

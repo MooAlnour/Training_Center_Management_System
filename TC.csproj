@@ -152,6 +152,12 @@
     <Compile Include="Student\frmAddEditStudent.Designer.cs">
       <DependentUpon>frmAddEditStudent.cs</DependentUpon>
     </Compile>
+    <Compile Include="Student\frmFindStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Student\frmFindStudent.Designer.cs">
+      <DependentUpon>frmFindStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Student\frmShowStudentInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +234,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Student\frmAddEditStudent.resx">
       <DependentUpon>frmAddEditStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student\frmFindStudent.resx">
+      <DependentUpon>frmFindStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student\frmShowStudentInfo.resx">
       <DependentUpon>frmShowStudentInfo.cs</DependentUpon>
