@@ -91,7 +91,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmFindStudent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "frmFindStudent";
+            this.Text = "f";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

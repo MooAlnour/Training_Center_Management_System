@@ -92,7 +92,6 @@ namespace Training_Center_Management_System.Student.Control
             }
             _StudentID = ctrStudentInfo1.StudentID;
 
-            MessageBox.Show(_StudentID.ToString());
             //  if (OnStudentSelected != null && FilterEnabled)
             // Raise the event with a parameter
             DataBackEvent(this,ctrStudentInfo1.StudentID);

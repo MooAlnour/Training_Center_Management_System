@@ -18,14 +18,14 @@ namespace Training_Center_Management_System.Course
         string ErrorMessage = "";
         public enum enMode { AddNew = 0, Update = 1 };
         private enMode _Mode;
-        public enum enCourseStatus
-        {
-            NonActive = 0,
-            Active = 1,
-            Completed = 2,
-            Cancelled = 3
-        };
-        private enCourseStatus _Status;
+        //public enum enCourseStatus
+        //{
+        //    NonActive = 0,
+        //    Active = 1,
+        //    Completed = 2,
+        //    Cancelled = 3
+        //};
+        //private enCourseStatus _Status;
 
         int _CourseID;
 

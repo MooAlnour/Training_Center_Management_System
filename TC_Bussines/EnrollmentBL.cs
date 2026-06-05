@@ -17,11 +17,9 @@ namespace TC_Bussines
       
             public enum enEnrollmentStatus
         {
-            Pending = 1,
-            Active = 2,
-            Completed = 3,
-            Cancelled = 4,
-            Suspended = 5
+            Active = 1,
+            Completed = 2,
+            Dropped = 3
         };
        
             public enEnrollmentStatus Status = enEnrollmentStatus.Active;
@@ -29,7 +27,7 @@ namespace TC_Bussines
             public int EnrollmentID { set; get; }
             public int StudentID { set; get; }
 
-            public  StudentBL StudentInfo;
+           // public  StudentBL StudentInfo;
             public int CourseID { set; get; }
 
             public CourseBL CourseInfo;
@@ -53,7 +51,7 @@ namespace TC_Bussines
             {
                 this.EnrollmentID = enrollmentID;
                 this.StudentID = studentID;
-                StudentInfo = StudentBL.FindByStudentID(StudentID);
+               // StudentInfo = StudentBL.FindByStudentID(StudentID);
                 this.CourseID = courseID;
                 CourseInfo = CourseBL.FindByCourseID(CourseID);
                 this.EnrollmentDate = enrollmentDate;
@@ -148,7 +146,10 @@ namespace TC_Bussines
 
             private bool _AddNewEnrollment(ref string ErrorMessage)
             {
-            _ValidateEnrollmentData(ref ErrorMessage);
+            if(_ValidateEnrollmentData(ref ErrorMessage)==false)
+                return false;
+
+
                 this.EnrollmentID = EnrollmentDL.AddNewEnrollment(
                     this.StudentID,
                     this.CourseID,
@@ -217,7 +218,6 @@ namespace TC_Bussines
             {
                 return EnrollmentDL.IsEnrollmentExist(ID);
             }
-       
             public static bool IsStudentEnrolled(int StudentID)
         
              {

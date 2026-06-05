@@ -28,9 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.lblEnrollmentID = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblStudentID = new System.Windows.Forms.Label();
@@ -50,10 +54,16 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalFee = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGrade)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -79,6 +89,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.pictureBox10);
+            this.groupBox1.Controls.Add(this.lblEnrollmentID);
+            this.groupBox1.Controls.Add(this.label22);
             this.groupBox1.Controls.Add(this.btnSearch);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.cbStatus);
@@ -96,6 +109,38 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = " Enrollment Information\n";
+            // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = global::Training_Center_Management_System.Properties.Resources.Number_32;
+            this.pictureBox10.Location = new System.Drawing.Point(184, 41);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(31, 26);
+            this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox10.TabIndex = 138;
+            this.pictureBox10.TabStop = false;
+            // 
+            // lblEnrollmentID
+            // 
+            this.lblEnrollmentID.AutoSize = true;
+            this.lblEnrollmentID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnrollmentID.Location = new System.Drawing.Point(237, 41);
+            this.lblEnrollmentID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEnrollmentID.Name = "lblEnrollmentID";
+            this.lblEnrollmentID.Size = new System.Drawing.Size(49, 25);
+            this.lblEnrollmentID.TabIndex = 137;
+            this.lblEnrollmentID.Text = "N/A";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(23, 41);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(154, 25);
+            this.label22.TabIndex = 136;
+            this.label22.Text = "Enrollment ID :";
             // 
             // btnSearch
             // 
@@ -117,7 +162,7 @@
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Location = new System.Drawing.Point(19, 98);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(779, 134);
+            this.groupBox3.Size = new System.Drawing.Size(779, 107);
             this.groupBox3.TabIndex = 134;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Student Info";
@@ -193,6 +238,7 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(251, 28);
             this.cbStatus.TabIndex = 132;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -210,6 +256,7 @@
             this.cbCourse.Name = "cbCourse";
             this.cbCourse.Size = new System.Drawing.Size(658, 28);
             this.cbCourse.TabIndex = 130;
+            this.cbCourse.SelectedIndexChanged += new System.EventHandler(this.cbCourse_SelectedIndexChanged);
             // 
             // nudGrade
             // 
@@ -217,6 +264,7 @@
             this.nudGrade.Name = "nudGrade";
             this.nudGrade.Size = new System.Drawing.Size(234, 27);
             this.nudGrade.TabIndex = 129;
+            this.nudGrade.Validating += new System.ComponentModel.CancelEventHandler(this.nudGrade_Validating);
             // 
             // dtpStartDate
             // 
@@ -258,10 +306,12 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblTotalFee);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(844, 108);
+            this.groupBox2.Location = new System.Drawing.Point(851, 462);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(304, 437);
+            this.groupBox2.Size = new System.Drawing.Size(304, 128);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = " Financial Summary\n";
@@ -292,11 +342,37 @@
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(84, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Total Fee:";
+            // 
+            // lblTotalFee
+            // 
+            this.lblTotalFee.AutoSize = true;
+            this.lblTotalFee.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalFee.Location = new System.Drawing.Point(163, 59);
+            this.lblTotalFee.Name = "lblTotalFee";
+            this.lblTotalFee.Size = new System.Drawing.Size(73, 20);
+            this.lblTotalFee.TabIndex = 3;
+            this.lblTotalFee.Text = "{?????}";
             // 
             // frmEnrollmentAddEdit
             // 
+            this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1181, 685);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
@@ -310,9 +386,13 @@
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudGrade)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,5 +421,11 @@
         private System.Windows.Forms.Label lblStudentName;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Label lblEnrollmentID;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotalFee;
     }
 }

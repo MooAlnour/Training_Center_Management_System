@@ -183,7 +183,7 @@ namespace TC_Bussines
                 return CourseDL.GetAllCourses();
             }
 
-        public DataTable GetAllStudentEnrollment()
+            public DataTable GetAllStudentEnrollment()
         {
             return EnrollmentDL.GetEnrollmentByCourseID(CourseID);
         }

@@ -91,8 +91,7 @@ namespace TC_DataAccess
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error: " + ex.Message);
-
+                throw;
                 isFound = false;
             }
             finally

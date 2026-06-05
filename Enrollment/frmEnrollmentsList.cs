@@ -117,6 +117,7 @@ namespace Training_Center_Management_System.Enrollment
         {
             frmEnrollmentAddEdit enrollmentAddEdit = new frmEnrollmentAddEdit();
             enrollmentAddEdit.ShowDialog();
+            frmEnrollmentsList_Load(null, null);
         }
     }
 }

@@ -301,13 +301,13 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Enrollments (CourseID,CourseID,EnrollmentDate,Grade,Status)
-                     VALUES (@CourseID,@CourseID,@EnrollmentDate,@Grade,@Status);
+            string query = @"INSERT INTO Enrollments (StudentID,CourseID,EnrollmentDate,Grade,Status)
+                     VALUES (@StudentID,@CourseID,@EnrollmentDate,@Grade,@Status);
                      SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CourseID", StudentID);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
             command.Parameters.AddWithValue("@EnrollmentDate", EnrollmentDate);
             command.Parameters.AddWithValue("@Grade", Grade);
@@ -524,11 +524,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT Found=1 FROM Enrollments WHERE CourseID = @CourseID and CourseID=@CourseID";
+            string query = "SELECT Found=1 FROM Enrollments WHERE StudentID = @StudentID and CourseID=@CourseID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CourseID", StudentID);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
 
             try
