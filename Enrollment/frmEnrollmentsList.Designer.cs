@@ -190,6 +190,7 @@
             this.btnDeleteEnrollment.Text = "Delete";
             this.btnDeleteEnrollment.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDeleteEnrollment.UseVisualStyleBackColor = false;
+            this.btnDeleteEnrollment.Click += new System.EventHandler(this.btnDeleteEnrollment_Click);
             // 
             // btnEditEnrollment
             // 
@@ -203,6 +204,7 @@
             this.btnEditEnrollment.Text = "Edit";
             this.btnEditEnrollment.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEditEnrollment.UseVisualStyleBackColor = false;
+            this.btnEditEnrollment.Click += new System.EventHandler(this.btnEditEnrollment_Click);
             // 
             // frmEnrollmentsList
             // 

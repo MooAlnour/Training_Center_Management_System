@@ -67,7 +67,7 @@ namespace TC_Bussines
                 int courseID = -1;
                 decimal grade = 0;
                 DateTime enrollmentDate = DateTime.Now;
-            byte status = 1 ;
+                byte status = 1 ;
 
                 bool IsFound = EnrollmentDL.GetEnrollmentInfoByEnrollmentID(
                     enrollmentID,

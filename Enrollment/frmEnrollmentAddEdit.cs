@@ -20,6 +20,7 @@ namespace Training_Center_Management_System.Enrollment
         StudentBL _Student;
 
         int _EnrollmentID = -1;
+
         EnrollmentBL _Enrollment;
       
 
@@ -117,9 +118,18 @@ namespace Training_Center_Management_System.Enrollment
                 this.Close();
                 return;
             }
+
+           // MessageBox.Show(_Enrollment.StudentID.ToString());
             _Student = StudentBL.FindByStudentID(_Enrollment.StudentID);
+
+            if (_Student == null)
+            {
+                MessageBox.Show("No Student with ID = " + _Student.StudentID, "Student Not Found", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                this.Close();
+                return;
+            }
             //the following code will not be executed if the person was not found
-            lblStudentID.Text = _StudentID.ToString();
+            lblStudentID.Text = _Enrollment.StudentID.ToString();
             lblStudentName.Text = _Student.FullName;
             lblStudentEmail.Text = _Student.Email;
             cbCourse.SelectedIndex = cbCourse.FindString(_Enrollment.CourseInfo.Title);

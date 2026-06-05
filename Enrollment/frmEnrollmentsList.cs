@@ -119,5 +119,45 @@ namespace Training_Center_Management_System.Enrollment
             enrollmentAddEdit.ShowDialog();
             frmEnrollmentsList_Load(null, null);
         }
+
+        private void btnEditEnrollment_Click(object sender, EventArgs e)
+        {
+            int EnrollmentID = (int)dgvEnrollments.CurrentRow.Cells[0].Value; ;
+            frmEnrollmentAddEdit enrollmentAddEdit = new frmEnrollmentAddEdit(EnrollmentID);
+            enrollmentAddEdit.ShowDialog();
+            frmEnrollmentsList_Load(null, null);
+        }
+
+        private void btnDeleteEnrollment_Click(object sender, EventArgs e)
+        {
+            int EnrollmentID = (int)dgvEnrollments.CurrentRow.Cells[0].Value; ;
+            DialogResult Result = MessageBox.Show(
+                $"Are you sure you want to delete Enrollment ID  = " + EnrollmentID,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (Result == DialogResult.Yes)
+            {
+                if (EnrollmentBL.DeleteEnrollment(EnrollmentID))
+                {
+                    MessageBox.Show(
+                        "EnrollmentID has been deleted successfully.",
+                        "Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    frmEnrollmentsList_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Enrollment was not deleted because there is related data.",
+                        "Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

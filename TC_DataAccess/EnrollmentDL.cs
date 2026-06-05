@@ -139,11 +139,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Enrollments WHERE CourseID = @CourseID";
+            string query = "SELECT * FROM Enrollments WHERE EnrollmentID = @EnrollmentID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CourseID", EnrollmentID);
+            command.Parameters.AddWithValue("@EnrollmentID", EnrollmentID);
 
             try
             {
@@ -155,7 +155,7 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    StudentID = (int)reader["CourseID"];
+                    StudentID = (int)reader["StudentID"];
                     CourseID = (int)reader["CourseID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
@@ -193,11 +193,11 @@ namespace TC_DataAccess
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Enrollments WHERE CourseID = @CourseID";
+            string query = "SELECT * FROM Enrollments WHERE StudentID = @StudentID";
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CourseID", StudentID);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
 
             try
             {
@@ -209,7 +209,7 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    EnrollmentID = (int)reader["CourseID"];
+                    EnrollmentID = (int)reader["EnrollmentID"];
                     CourseID = (int)reader["CourseID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
@@ -263,8 +263,8 @@ namespace TC_DataAccess
                     // The record was found
                     isFound = true;
 
-                    EnrollmentID = (int)reader["CourseID"];
-                    StudentID = (int)reader["CourseID"];
+                    EnrollmentID = (int)reader["EnrollmentID"];
+                    StudentID = (int)reader["StudentID"];
                     EnrollmentDate = (DateTime)reader["EnrollmentDate"];
                     Grade = (decimal)reader["Grade"];
                     Status = (byte)reader["Status"];
@@ -357,8 +357,8 @@ namespace TC_DataAccess
 
             SqlCommand command = new SqlCommand(query, connection);
 
-            command.Parameters.AddWithValue("@CourseID", EnrollmentID);
-            command.Parameters.AddWithValue("@CourseID", StudentID);
+            command.Parameters.AddWithValue("@EnrollmentID", EnrollmentID);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
             command.Parameters.AddWithValue("@CourseID", CourseID);
             command.Parameters.AddWithValue("@EnrollmentDate", EnrollmentDate);
             command.Parameters.AddWithValue("@Grade", Grade);
