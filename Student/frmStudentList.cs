@@ -32,19 +32,19 @@ namespace Training_Center_Management_System.Student
                 DGVStudents.Columns[0].Width = 80;
 
                 DGVStudents.Columns[1].HeaderText = "Full Name";
-                DGVStudents.Columns[1].Width = 180;
+                DGVStudents.Columns[1].Width = 220;
 
                 DGVStudents.Columns[2].HeaderText = "Phone";
-                DGVStudents.Columns[2].Width = 120;
+                DGVStudents.Columns[2].Width = 135;
 
                 DGVStudents.Columns[3].HeaderText = "Email";
-                DGVStudents.Columns[3].Width = 120;
+                DGVStudents.Columns[3].Width = 160;
 
                 DGVStudents.Columns[4].HeaderText = "Date of Birth";
-                DGVStudents.Columns[4].Width = 120;
+                DGVStudents.Columns[4].Width = 130;
 
                 DGVStudents.Columns[5].HeaderText = "Registation Date";
-                DGVStudents.Columns[5].Width = 120;
+                DGVStudents.Columns[5].Width = 130;
 
             }
         }
@@ -182,7 +182,7 @@ namespace Training_Center_Management_System.Student
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void DGVStudents_CellContentClick(object sender, DataGridViewCellEventArgs e)

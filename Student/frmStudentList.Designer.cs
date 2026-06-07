@@ -57,7 +57,7 @@
             "Phone",
             "Student Name",
             "Email"});
-            this.cbFilterBy.Location = new System.Drawing.Point(343, 101);
+            this.cbFilterBy.Location = new System.Drawing.Point(298, 155);
             this.cbFilterBy.Name = "cbFilterBy";
             this.cbFilterBy.Size = new System.Drawing.Size(210, 24);
             this.cbFilterBy.TabIndex = 113;
@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(239, 96);
+            this.label1.Location = new System.Drawing.Point(176, 151);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 112;
@@ -77,7 +77,7 @@
             // lblRecordsCount
             // 
             this.lblRecordsCount.AutoSize = true;
-            this.lblRecordsCount.Location = new System.Drawing.Point(316, 517);
+            this.lblRecordsCount.Location = new System.Drawing.Point(316, 676);
             this.lblRecordsCount.Name = "lblRecordsCount";
             this.lblRecordsCount.Size = new System.Drawing.Size(21, 16);
             this.lblRecordsCount.TabIndex = 111;
@@ -88,7 +88,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(176, 508);
+            this.label2.Location = new System.Drawing.Point(176, 667);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(116, 25);
             this.label2.TabIndex = 110;
@@ -101,19 +101,19 @@
             this.DGVStudents.AllowUserToDeleteRows = false;
             this.DGVStudents.BackgroundColor = System.Drawing.Color.White;
             this.DGVStudents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVStudents.Location = new System.Drawing.Point(181, 168);
+            this.DGVStudents.Location = new System.Drawing.Point(180, 220);
             this.DGVStudents.Name = "DGVStudents";
             this.DGVStudents.ReadOnly = true;
             this.DGVStudents.RowHeadersWidth = 51;
             this.DGVStudents.RowTemplate.Height = 24;
-            this.DGVStudents.Size = new System.Drawing.Size(914, 323);
+            this.DGVStudents.Size = new System.Drawing.Size(1209, 393);
             this.DGVStudents.TabIndex = 109;
             this.DGVStudents.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVStudents_CellContentClick);
             // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.Location = new System.Drawing.Point(580, 101);
+            this.txtSearch.Location = new System.Drawing.Point(514, 155);
             this.txtSearch.Multiline = true;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(246, 24);
@@ -125,7 +125,7 @@
             this.btnView.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnView.Image = global::Training_Center_Management_System.Properties.Resources.icons8_view_32;
             this.btnView.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnView.Location = new System.Drawing.Point(13, 283);
+            this.btnView.Location = new System.Drawing.Point(12, 396);
             this.btnView.Name = "btnView";
             this.btnView.Size = new System.Drawing.Size(91, 67);
             this.btnView.TabIndex = 107;
@@ -139,7 +139,7 @@
             this.btnAddStudent.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAddStudent.Image = global::Training_Center_Management_System.Properties.Resources.icons8_add_32;
             this.btnAddStudent.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAddStudent.Location = new System.Drawing.Point(13, 367);
+            this.btnAddStudent.Location = new System.Drawing.Point(12, 480);
             this.btnAddStudent.Name = "btnAddStudent";
             this.btnAddStudent.Size = new System.Drawing.Size(91, 67);
             this.btnAddStudent.TabIndex = 104;
@@ -153,7 +153,7 @@
             this.btnDelete.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnDelete.Image = global::Training_Center_Management_System.Properties.Resources.icons8_delete_32;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(13, 194);
+            this.btnDelete.Location = new System.Drawing.Point(12, 307);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(91, 67);
             this.btnDelete.TabIndex = 106;
@@ -167,7 +167,7 @@
             this.button3.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button3.Image = global::Training_Center_Management_System.Properties.Resources.icons8_edit_32;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button3.Location = new System.Drawing.Point(13, 107);
+            this.button3.Location = new System.Drawing.Point(12, 220);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(91, 67);
             this.button3.TabIndex = 105;
@@ -182,7 +182,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnClose.Image = global::Training_Center_Management_System.Properties.Resources.Close_32;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(969, 499);
+            this.btnClose.Location = new System.Drawing.Point(1263, 655);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(126, 37);
@@ -198,7 +198,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1111, 66);
+            this.panel1.Size = new System.Drawing.Size(1402, 66);
             this.panel1.TabIndex = 115;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -218,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1111, 553);
+            this.ClientSize = new System.Drawing.Size(1402, 716);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.cbFilterBy);

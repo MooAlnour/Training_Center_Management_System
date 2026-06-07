@@ -31,10 +31,10 @@ namespace Training_Center_Management_System.Enrollment
             if (dgvEnrollments.Rows.Count > 0)
             {
                 dgvEnrollments.Columns[0].HeaderText = "EnrollmentID";
-                dgvEnrollments.Columns[0].Width = 80;
+                dgvEnrollments.Columns[0].Width = 150;
 
                 dgvEnrollments.Columns[1].HeaderText = "StudentID";
-                dgvEnrollments.Columns[1].Width = 100;
+                dgvEnrollments.Columns[1].Width = 150;
 
                 dgvEnrollments.Columns[2].HeaderText = "CourseID";
                 dgvEnrollments.Columns[2].Width = 180;
@@ -43,10 +43,10 @@ namespace Training_Center_Management_System.Enrollment
                 dgvEnrollments.Columns[3].Width = 120;
 
                 dgvEnrollments.Columns[4].HeaderText = "Status";
-                dgvEnrollments.Columns[4].Width = 90;
+                dgvEnrollments.Columns[4].Width = 120;
 
                 dgvEnrollments.Columns[5].HeaderText = "Grade";
-                dgvEnrollments.Columns[5].Width = 100;
+                dgvEnrollments.Columns[5].Width = 120;
             }
         }
 

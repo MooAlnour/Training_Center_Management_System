@@ -32,10 +32,10 @@ namespace Training_Center_Management_System.Course
             if (dgvCourses.Rows.Count > 0)
             {
                 dgvCourses.Columns[0].HeaderText = "Course ID";
-                dgvCourses.Columns[0].Width = 80;
+                dgvCourses.Columns[0].Width = 100;
 
                 dgvCourses.Columns[1].HeaderText = "Title";
-                dgvCourses.Columns[1].Width = 180;
+                dgvCourses.Columns[1].Width = 310;
 
                 dgvCourses.Columns[2].HeaderText = "Hours";
                 dgvCourses.Columns[2].Width = 100;
@@ -44,10 +44,10 @@ namespace Training_Center_Management_System.Course
                 dgvCourses.Columns[3].Width = 100;
 
                 dgvCourses.Columns[4].HeaderText = "Start Date";
-                dgvCourses.Columns[4].Width = 120;
+                dgvCourses.Columns[4].Width = 130;
 
                 dgvCourses.Columns[5].HeaderText = "Status";
-                dgvCourses.Columns[5].Width = 90;
+                dgvCourses.Columns[5].Width = 100;
 
             }
         }
