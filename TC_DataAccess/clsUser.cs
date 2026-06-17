@@ -51,7 +51,7 @@ namespace TC_DataAccess
         }
 
         public static bool GetUserInfoByUserID(int UserID, ref string UserName,
-                 ref bool IsActive,ref string SecurityQuestion, ref string SecurityAnswerHash)
+                 ref bool IsActive,ref string SecurityQuestion, ref string SecurityAnswerHash,ref string Role)
         {
             bool isFound = false;
 
@@ -76,6 +76,7 @@ namespace TC_DataAccess
                     UserName = (string)reader["UserName"];
                     SecurityQuestion = (string)reader["SecurityQuestion"];
                     SecurityAnswerHash = (string)reader["SecurityAnswerHash"];
+                    Role = (string)reader["Role"];
                     IsActive = (bool)reader["IsActive"];
                 }
                 else
@@ -103,7 +104,7 @@ namespace TC_DataAccess
         }
 
         public static bool GetUserInfoByUserName(string UserName, ref int UserID,
-                 ref bool IsActive, ref string SecurityQuestion, ref string SecurityAnswerHash)
+                 ref bool IsActive, ref string SecurityQuestion, ref string SecurityAnswerHash,ref string Role)
         {
             bool isFound = false;
 
@@ -128,6 +129,7 @@ namespace TC_DataAccess
                     UserID = (int)reader["UserID"];
                     SecurityQuestion = (string)reader["SecurityQuestion"];
                     SecurityAnswerHash = (string)reader["SecurityAnswerHash"];
+                    Role = (string)reader["Role"];
                     IsActive = (bool)reader["IsActive"];
                 }
                 else
@@ -156,7 +158,7 @@ namespace TC_DataAccess
 
 
         public static bool GetUserInfoByUsernameAndPassword(string UserName, string PasswordHash,
-            ref int UserID, ref bool IsActive, ref string SecurityQuestion, ref string SecurityAnswerHash)
+            ref int UserID, ref bool IsActive, ref string SecurityQuestion, ref string SecurityAnswerHash, ref string Role)
         {
             bool isFound = false;
 
@@ -182,6 +184,7 @@ namespace TC_DataAccess
                     UserID = (int)reader["UserID"];
                     IsActive = (bool)reader["IsActive"];
                     SecurityQuestion = (string)reader["SecurityQuestion"];
+                    Role = (string)reader["Role"];
                     SecurityAnswerHash = (string)reader["SecurityAnswerHash"];
 
 
@@ -211,24 +214,25 @@ namespace TC_DataAccess
         }
 
         public static int AddNewUser(string UserName,
-             string Password, bool IsActive,string SecurityQuestion,string SecurityAnswerHash)
+             string PasswordHash, bool IsActive,string SecurityQuestion,string SecurityAnswerHash,string Role)
         {
             //this function will return the new person id if succeeded and -1 if not.
             int UserID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = @"INSERT INTO Users (PersonID,UserName,Password,IsActive)
-                             VALUES (@PersonID, @UserName,@Password,@IsActive);
+            string query = @"INSERT INTO Users (UserName,PasswordHash,IsActive,SecurityQuestion,SecurityAnswerHash,Role)
+                             VALUES (@UserName,@PasswordHash,@IsActive,@SecurityQuestion,@SecurityAnswerHash,@Role);
                              SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@UserName", UserName);
-            command.Parameters.AddWithValue("@Password", Password);
+            command.Parameters.AddWithValue("@PasswordHash", PasswordHash);
             command.Parameters.AddWithValue("@SecurityQuestion", SecurityQuestion);
             command.Parameters.AddWithValue("@SecurityAnswerHash", SecurityAnswerHash);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@Role", Role);
 
             try
             {
@@ -257,7 +261,7 @@ namespace TC_DataAccess
         }
 
         public static bool UpdateUser(int UserID, string UserName,
-             string PasswordHash, bool IsActive, string SecurityQuestion, string SecurityAnswerHash)
+             string PasswordHash, bool IsActive, string SecurityQuestion, string SecurityAnswerHash,string Role)
         {
 
             int rowsAffected = 0;
@@ -268,6 +272,7 @@ namespace TC_DataAccess
                                 UserName = @UserName,
                                 PasswordHash = @PasswordHash,
                                 IsActive = @IsActive
+                                Role=@Role
                                 where UserID = @UserID";
 
             SqlCommand command = new SqlCommand(query, connection);
@@ -277,6 +282,7 @@ namespace TC_DataAccess
             command.Parameters.AddWithValue("@SecurityQuestion", SecurityQuestion);
             command.Parameters.AddWithValue("@SecurityAnswerHash", SecurityAnswerHash);
             command.Parameters.AddWithValue("@IsActive", IsActive);
+            command.Parameters.AddWithValue("@Role", Role);
             command.Parameters.AddWithValue("@UserID", UserID);
 
 
@@ -473,6 +479,43 @@ namespace TC_DataAccess
 
             return isFound;
         }
+
+        public static bool UpdateStatus(int UserID, bool IsActive)
+        {
+
+            int rowsAffected = 0;
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"Update  Users  
+                            set 
+                                IsActive = @IsActive
+                            where UserID=@UserID;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@UserID", UserID);
+            command.Parameters.AddWithValue("@IsActive", IsActive);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+
 
     }
 }

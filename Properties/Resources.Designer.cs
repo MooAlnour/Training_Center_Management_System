@@ -293,6 +293,16 @@ namespace Training_Center_Management_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Man_32 {
+            get {
+                object obj = ResourceManager.GetObject("Man 32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap monitor_24px {
             get {
                 object obj = ResourceManager.GetObject("monitor_24px", resourceCulture);
@@ -386,6 +396,16 @@ namespace Training_Center_Management_System.Properties {
         internal static System.Drawing.Bitmap SearchPerson1 {
             get {
                 object obj = ResourceManager.GetObject("SearchPerson1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vision_Test_32 {
+            get {
+                object obj = ResourceManager.GetObject("Vision Test 32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -12,10 +12,10 @@ namespace TC_Bussines
     {
         public enum enMode { AddNew = 0, Update = 1 };
         public enMode Mode = enMode.AddNew;
-
         public int UserID { set; get; }
         public string UserName { set; get; }
         public string PasswordHash { set; get; }
+        public string Role { set; get; }
         public bool IsActive { set; get; }
         public string SecurityQuestion { get; set; }
         public string SecurityAnswerHash { get; set; }
@@ -28,10 +28,11 @@ namespace TC_Bussines
             this.IsActive = true;
             this.SecurityQuestion = "";
             this.SecurityAnswerHash = "";
+            this.Role = "";
             Mode = enMode.AddNew;
         }
 
-       private UserBL(int userID, string userName, string passwordHash, bool isActive, string securityQuestion, string securityAnswerHash)
+       private UserBL(int userID, string userName, string passwordHash, bool isActive, string securityQuestion, string securityAnswerHash,string role)
         {
             UserID = userID;
             UserName = userName;
@@ -39,6 +40,7 @@ namespace TC_Bussines
             IsActive = isActive;
             SecurityQuestion = securityQuestion;
             SecurityAnswerHash = securityAnswerHash;
+            Role = role;
             Mode = enMode.Update;
 
         }
@@ -46,15 +48,15 @@ namespace TC_Bussines
         public static UserBL FindByUserID(int userID)
         {
             string userName = "", passwordHash = "",securityQuestion = "",
-            securityAnswerHash = "";
+            securityAnswerHash = "",role="";
 
             bool isActive = false;
 
-            bool IsFound = clsUser.GetUserInfoByUserID(userID,ref userName, ref isActive,ref securityQuestion,ref securityAnswerHash);
+            bool IsFound = clsUser.GetUserInfoByUserID(userID,ref userName, ref isActive,ref securityQuestion,ref securityAnswerHash,ref role);
 
             if (IsFound)
                 //we return new object of that person with the right data
-                return new UserBL(userID, userName, passwordHash, isActive, securityQuestion, securityAnswerHash);
+                return new UserBL(userID, userName, passwordHash, isActive, securityQuestion, securityAnswerHash,role);
             else
                 return null;
 
@@ -63,15 +65,15 @@ namespace TC_Bussines
         {
             int userID = -1;
             string passwordHash = "", securityQuestion = "",
-            securityAnswerHash = "";
+            securityAnswerHash = "",role="";
 
             bool isActive = false;
 
-            bool IsFound = clsUser.GetUserInfoByUserName(userName, ref userID, ref isActive, ref securityQuestion, ref securityAnswerHash);
+            bool IsFound = clsUser.GetUserInfoByUserName(userName, ref userID, ref isActive, ref securityQuestion, ref securityAnswerHash,ref role);
 
             if (IsFound)
                 //we return new object of that person with the right data
-                return new UserBL(userID, userName, passwordHash, isActive, securityQuestion, securityAnswerHash);
+                return new UserBL(userID, userName, passwordHash, isActive, securityQuestion, securityAnswerHash, role);
             else
                 return null;
 
@@ -80,16 +82,16 @@ namespace TC_Bussines
         public static UserBL FindByUserNameAndPassword(string UserName, string passwordHash)
         {
             string securityQuestion = "",
-            securityAnswerHash = "";
+            securityAnswerHash = "",role="";
             int  UserID = -1;
             bool isActive = false;
 
 
-            bool IsFound = clsUser.GetUserInfoByUsernameAndPassword(UserName,HashClass.HashMethod(passwordHash), ref UserID, ref isActive, ref securityQuestion, ref securityAnswerHash);
+            bool IsFound = clsUser.GetUserInfoByUsernameAndPassword(UserName,HashClass.HashMethod(passwordHash), ref UserID, ref isActive, ref securityQuestion, ref securityAnswerHash,ref role);
 
             if (IsFound)
                 //we return new object of that person with the right data
-                return new UserBL(UserID, UserName, passwordHash, isActive, securityQuestion, securityAnswerHash);
+                return new UserBL(UserID, UserName, passwordHash, isActive, securityQuestion, securityAnswerHash,role);
             else
                 return null;
 
@@ -97,7 +99,7 @@ namespace TC_Bussines
 
         private bool _AddNewUser()
         {
-            this.UserID = clsUser.AddNewUser( this.UserName, HashClass.HashMethod(this.PasswordHash), this.IsActive,SecurityQuestion, HashClass.HashMethod(SecurityAnswerHash));
+            this.UserID = clsUser.AddNewUser( this.UserName, HashClass.HashMethod(this.PasswordHash), this.IsActive,SecurityQuestion, HashClass.HashMethod(SecurityAnswerHash),this.Role);
 
             return (this.UserID != -1);
         }
@@ -129,7 +131,7 @@ namespace TC_Bussines
 
         private bool _UpdateUser()
         {
-            return clsUser.UpdateUser(this.UserID , this.UserName, HashClass.HashMethod(this.PasswordHash), this.IsActive, SecurityQuestion, HashClass.HashMethod(SecurityAnswerHash));
+            return clsUser.UpdateUser(this.UserID , this.UserName, HashClass.HashMethod(this.PasswordHash), this.IsActive, SecurityQuestion, HashClass.HashMethod(SecurityAnswerHash),this.Role);
         }
 
         public static DataTable GetAllUsers()
@@ -160,12 +162,14 @@ namespace TC_Bussines
         {
             return clsUser.ChangePassword(UserID, HashClass.HashMethod(Password));
         }
-
         public static bool IsSecurityQuestionRight(int UserID, string securityQuestion)
         {
             return clsUser.IsSecurityQuestionRight(UserID, HashClass.HashMethod(securityQuestion));
         }
 
-
+        public static bool SetActive(int UserID, bool Status)
+        {
+            return clsUser.UpdateStatus(UserID, Status);
+        }
     }
 }

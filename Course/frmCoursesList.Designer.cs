@@ -28,12 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvCourses = new System.Windows.Forms.DataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showDetaliesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setCompletToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setCancelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnViewDetails = new System.Windows.Forms.Button();
@@ -43,6 +48,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -92,7 +98,6 @@
             this.label1.Size = new System.Drawing.Size(98, 25);
             this.label1.TabIndex = 118;
             this.label1.Text = "Filter By:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtSearch
             // 
@@ -110,6 +115,7 @@
             this.dgvCourses.AllowUserToDeleteRows = false;
             this.dgvCourses.BackgroundColor = System.Drawing.Color.White;
             this.dgvCourses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCourses.ContextMenuStrip = this.contextMenuStrip1;
             this.dgvCourses.Location = new System.Drawing.Point(132, 222);
             this.dgvCourses.Name = "dgvCourses";
             this.dgvCourses.ReadOnly = true;
@@ -117,6 +123,38 @@
             this.dgvCourses.RowTemplate.Height = 24;
             this.dgvCourses.Size = new System.Drawing.Size(1204, 391);
             this.dgvCourses.TabIndex = 120;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showDetaliesToolStripMenuItem,
+            this.setCompletToolStripMenuItem,
+            this.setCancelToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(223, 100);
+            // 
+            // showDetaliesToolStripMenuItem
+            // 
+            this.showDetaliesToolStripMenuItem.Name = "showDetaliesToolStripMenuItem";
+            this.showDetaliesToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
+            this.showDetaliesToolStripMenuItem.Text = "Show info";
+            this.showDetaliesToolStripMenuItem.Click += new System.EventHandler(this.showDetaliesToolStripMenuItem_Click);
+            // 
+            // setCompletToolStripMenuItem
+            // 
+            this.setCompletToolStripMenuItem.Name = "setCompletToolStripMenuItem";
+            this.setCompletToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
+            this.setCompletToolStripMenuItem.Text = "Set Completed";
+            this.setCompletToolStripMenuItem.Click += new System.EventHandler(this.setCompletToolStripMenuItem_Click);
+            // 
+            // setCancelToolStripMenuItem
+            // 
+            this.setCancelToolStripMenuItem.Name = "setCancelToolStripMenuItem";
+            this.setCancelToolStripMenuItem.Size = new System.Drawing.Size(222, 32);
+            this.setCancelToolStripMenuItem.Text = "Set Cancel";
+            this.setCancelToolStripMenuItem.Click += new System.EventHandler(this.setCancelToolStripMenuItem_Click);
             // 
             // lblRecordsCount
             // 
@@ -225,7 +263,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCoursesList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCoursesList";
@@ -233,6 +271,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCourses)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +292,9 @@
         private System.Windows.Forms.Button btnDeleteCourse;
         private System.Windows.Forms.Button btnViewDetails;
         private System.Windows.Forms.Button btnAddCourse;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showDetaliesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setCompletToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem setCancelToolStripMenuItem;
     }
 }

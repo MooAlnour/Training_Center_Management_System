@@ -55,7 +55,7 @@ namespace Training_Center_Management_System.Course
                 lblTitle.Text = "Update Course";
             }
 
-            dtpStartDate.MinDate = DateTime.Today;
+            dtpStartDate.MinDate = DateTime.Today.AddYears(-1);
             dtpStartDate.MaxDate = DateTime.Today.AddYears(1);
 
             txtCourseTitle.Text = "";

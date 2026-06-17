@@ -97,9 +97,9 @@ namespace TC_Bussines
 
         // Validation Mothed For Add new Payment
 
-      
             private bool _ValidatePaymentData(ref string ErrorMessage)
             {
+            EnrollmentBL enrollment = EnrollmentBL.FindByEnrollmentID(EnrollmentID);
                 if (Amount <= 0)
                 {
                     ErrorMessage = " Amount must be greater than 0 ";
@@ -122,11 +122,19 @@ namespace TC_Bussines
                     ErrorMessage = "The  Enrollment was Cancelled ";
                     return false;
                 }
-                return true;
+
+            if (Amount > enrollment.CourseInfo.Price)
+            {
+                ErrorMessage = "The must be less than Course Price";
+                return false;
+            }
+            return true;
             }
 
-            private bool _AddNewPayment()
+            private bool _AddNewPayment(ref string ErrorMessage)
             {
+            if (!_ValidatePaymentData(ref ErrorMessage))
+                return false;
 
                 this.PaymentID = PaymentDL.AddNewPayment(
                     this.EnrollmentID,
@@ -152,7 +160,7 @@ namespace TC_Bussines
 
             }
 
-            public bool Save()
+            public bool Save(ref string ErrorMessage)
             {
 
                 switch (Mode)
@@ -160,7 +168,7 @@ namespace TC_Bussines
 
                     case enMode.AddNew:
 
-                        if (_AddNewPayment())
+                        if (_AddNewPayment(ref ErrorMessage))
                         {
 
                             Mode = enMode.Update;
@@ -225,7 +233,11 @@ namespace TC_Bussines
                 return PaymentDL.IsPaymentExist(ID);
             }
 
-       
+        public static decimal GetTotalPaid(int EnrollmentID)
+        {
+            return PaymentDL.GetTotalPaid(EnrollmentID);
+        }
+
     }
     
 }

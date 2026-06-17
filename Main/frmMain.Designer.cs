@@ -357,6 +357,7 @@
             this.btnPayments.TabIndex = 13;
             this.btnPayments.Text = "PAYMENTS";
             this.btnPayments.UseVisualStyleBackColor = false;
+            this.btnPayments.Click += new System.EventHandler(this.btnPayments_Click);
             // 
             // frmMain
             // 

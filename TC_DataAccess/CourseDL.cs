@@ -16,7 +16,7 @@ namespace TC_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Courses";
+            string query = "select Courses.CourseID,\r\n       Courses.Title,\r\n       Courses.Hours,\r\n       Courses.Price,\r\n       Courses.StartDate,\r\n       CASE Status\r\n    WHEN 1 THEN 'Active'\r\n    WHEN 2 THEN 'Completed'\r\n    WHEN 3 THEN 'Cancelled'\r\n    ELSE 'Unknown'\r\nEND AS Status\r\nfrom Courses";
 
             SqlCommand command = new SqlCommand(query, connection);
 
@@ -49,7 +49,50 @@ namespace TC_DataAccess
             return dt;
 
         }
+        public static DataTable GetCourseByEnrollment(int StudentID)
+        {
 
+            DataTable dt = new DataTable();
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"SELECT Courses.Title
+                                from Enrollments 
+                                INNER JOIN Courses    
+                                ON Courses.CourseID = Enrollments.CourseID
+                                where  Enrollments.StudentID=@StudentID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
+
+            try
+            {
+                connection.Open();
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.HasRows)
+
+                {
+                    dt.Load(reader);
+                }
+
+                reader.Close();
+
+
+            }
+
+            catch (Exception ex)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return dt;
+
+        }
         public static bool GetCourseInfoByCourseID(int CourseID, ref string Title, ref int Hours
             , ref decimal Price, ref DateTime StartDate, ref byte Status)
         {
@@ -446,7 +489,7 @@ namespace TC_DataAccess
 
             string query = @"Update  Courses  
                             set 
-                                Status = @NewStatus, 
+                                Status = @Status
                             where CourseID=@CourseID;";
 
             SqlCommand command = new SqlCommand(query, connection);

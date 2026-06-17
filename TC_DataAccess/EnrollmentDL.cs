@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace TC_DataAccess
 {
@@ -16,8 +17,27 @@ namespace TC_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = "SELECT * FROM Enrollments";
+            string query = @"SELECT 
+                              Enrollments.EnrollmentID,
+                            Students.FullName,
+                            Courses.Title,
+    
+                            CASE Enrollments.Status
+                                WHEN 1 THEN 'Active'
+                                WHEN 2 THEN 'Completed'
+                                WHEN 3 THEN 'Cancelled'
+                                ELSE 'Unknown'
+                            END AS Status,
 
+                            Enrollments.Grade,
+                            Enrollments.EnrollmentDate
+
+                        FROM Enrollments
+                        INNER JOIN Students
+                            ON Students.StudentID = Enrollments.StudentID
+
+                        INNER JOIN Courses
+                            ON Courses.CourseID = Enrollments.CourseID";
             SqlCommand command = new SqlCommand(query, connection);
 
             try
@@ -55,10 +75,10 @@ namespace TC_DataAccess
             DataTable dt = new DataTable();
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
-            string query = $"Enrollments.CourseID, Status, Grade, EnrollmentDate from Enrollments where CourseID=@CourseID";
+            string query = $"Enrollments.CourseID, Status, Grade, EnrollmentDate from Enrollments where StudentID=@StudentID";
 
             SqlCommand command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@CourseID", StudentID);
+            command.Parameters.AddWithValue("@StudentID", StudentID);
 
             try
             {
@@ -621,5 +641,57 @@ namespace TC_DataAccess
             return isFound;
         }
 
+        public static bool FindByStudentAndCourse(int studentID, int courseID, ref int enrollmentID, ref DateTime enrollmentDate, ref decimal grade, ref byte status)
+        {
+            bool isFound = false;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = "SELECT * FROM Enrollments WHERE StudentID = @studentID and CourseID=@courseID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@StudentID", studentID);
+            command.Parameters.AddWithValue("@CourseID", courseID);
+
+            try
+            {
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // The record was found
+                    isFound = true;
+
+                    enrollmentID = (int)reader["EnrollmentID"];
+                    enrollmentDate = (DateTime)reader["EnrollmentDate"];
+                    grade = (decimal)reader["Grade"];
+                    status = (byte)reader["Status"];
+
+                }
+                else
+                {
+                    // The record was not found
+                    isFound = false;
+                }
+
+                reader.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine("Error: " + ex.Message);
+
+                isFound = false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return isFound;
+        }
     }
 }

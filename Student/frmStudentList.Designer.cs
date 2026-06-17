@@ -207,7 +207,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(476, 9);
+            this.label3.Location = new System.Drawing.Point(631, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 41);
             this.label3.TabIndex = 0;
@@ -231,7 +231,7 @@
             this.Controls.Add(this.btnAddStudent);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.button3);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmStudentList";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student List";

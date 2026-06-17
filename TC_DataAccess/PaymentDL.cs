@@ -411,5 +411,41 @@ namespace TC_DataAccess
 
             return isFound;
         }
+
+        public static decimal GetTotalPaid(int EnrollmentID)
+        {
+            decimal totalPaid = 0;
+            string query = "SELECT SUM(Amount) FROM Payments WHERE EnrollmentID=@EnrollmentID";
+
+            using (SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString))
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@EnrollmentID", EnrollmentID);
+
+                try
+                {
+                    connection.Open();
+                    object result = command.ExecuteScalar();
+
+                    if (result != DBNull.Value && result != null)
+                    {
+                        totalPaid = Convert.ToDecimal(result);
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    // Log SQL error
+                    throw new Exception("Database error occurred while retrieving total paid.", ex);
+                }
+                catch (Exception ex)
+                {
+                    // Log general error
+                    throw new Exception("An error occurred while retrieving total paid.", ex);
+                }
+            }
+
+            return totalPaid;
+        }
+
     }
 }

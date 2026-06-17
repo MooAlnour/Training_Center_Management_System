@@ -173,14 +173,35 @@ namespace Training_Center_Management_System.Course
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void showDetaliesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            frmShowCourseDetails frmShow = new frmShowCourseDetails(CourseID);
+            frmShow.ShowDialog();
+            frmCoursesList_Load(null, null);
+        }
+
+        private void setCompletToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            CourseBL course = CourseBL.FindByCourseID(CourseID);
+            if (course == null)
+                return;
+
+            course.SetComplete();
+            frmCoursesList_Load(null, null);
 
         }
 
-        private void cbIsActive_SelectedIndexChanged(object sender, EventArgs e)
+        private void setCancelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+            int CourseID = (int)dgvCourses.CurrentRow.Cells[0].Value;
+            CourseBL course = CourseBL.FindByCourseID(CourseID);
+            if (course == null)
+                return;
+            course.Cancel();
+            frmCoursesList_Load(null, null);
+
         }
     }
 }

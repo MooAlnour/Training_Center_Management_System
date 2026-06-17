@@ -84,8 +84,28 @@ namespace TC_Bussines
                     return null;
 
             }
+            public static EnrollmentBL FindByStudentAndCourse(int studentID, int courseID)
+            {
+            int enrollmentID = -1;
+            decimal grade = 0;
+            DateTime enrollmentDate = DateTime.Now;
+            byte status = 1;
 
-            public static EnrollmentBL FindByStudentID(int StudentID)
+            bool IsFound = EnrollmentDL.FindByStudentAndCourse(
+                studentID, courseID,
+                ref enrollmentID,
+                ref enrollmentDate,
+                ref grade,
+                ref status);
+
+            if (IsFound)
+                return new EnrollmentBL(enrollmentID, studentID, courseID,
+                    enrollmentDate, grade, (enEnrollmentStatus)status);
+            else
+                return null;
+        }
+
+        public static EnrollmentBL FindByStudentID(int StudentID)
             {
 
                 int enrollmentID = -1;
@@ -244,6 +264,7 @@ namespace TC_Bussines
         {
             return EnrollmentDL.UpdateStatus(EnrollmentID, (short)Status);
         }
+
     }
 
 }

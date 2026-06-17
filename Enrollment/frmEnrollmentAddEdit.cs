@@ -42,6 +42,7 @@ namespace Training_Center_Management_System.Enrollment
             _EnrollmentID = EnrollmentID;
             _Mode = enMode.Update;
         }
+
         private void FillStudentInfo()
         {
             _Student = StudentBL.FindByStudentID(_StudentID);
@@ -159,6 +160,7 @@ namespace Training_Center_Management_System.Enrollment
                 MessageBox.Show("Select Course Frist", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             int CourseID = CourseBL.FindByTitle(cbCourse.Text).CourseID;
             _Enrollment.StudentID = _StudentID;
             _Enrollment.CourseID = CourseID;

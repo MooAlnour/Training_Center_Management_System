@@ -12,6 +12,7 @@ using Training_Center_Management_System.Course;
 using Training_Center_Management_System.Enrollment;
 using Training_Center_Management_System.Global_Classes;
 using Training_Center_Management_System.Login;
+using Training_Center_Management_System.Payment;
 using Training_Center_Management_System.Student;
 using Training_Center_Management_System.Users;
 
@@ -42,7 +43,7 @@ namespace Training_Center_Management_System.Main
         }
         private void frmMainn_Load(object sender, EventArgs e)
         {
-          //  lblUserName.Text = clsGlobal.CurrentUser.UserName;
+           lblUserName.Text = clsGlobal.CurrentUser.UserName;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -100,8 +101,22 @@ namespace Training_Center_Management_System.Main
 
         private void btnUsers_Click(object sender, EventArgs e)
         {
-            frmUserList frmUser = new frmUserList();
-            frmUser.ShowDialog();
+            if (clsGlobal.CurrentUser.Role=="Admin")
+            {
+                frmUserList frmUser = new frmUserList();
+                frmUser.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("You cant Open the Window", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+
+        }
+
+        private void btnPayments_Click(object sender, EventArgs e)
+        {
+            frmPaymentList frmPayment = new frmPaymentList();
+            frmPayment.ShowDialog();
         }
     }
 }

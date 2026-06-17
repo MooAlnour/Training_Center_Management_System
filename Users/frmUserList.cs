@@ -123,17 +123,88 @@ namespace Training_Center_Management_System.Users
             lblRecordsCount.Text = dgvUsers.Rows.Count.ToString();
 
             dgvUsers.Columns[0].HeaderText = "User ID";
-            dgvUsers.Columns[0].Width = 110;
+            dgvUsers.Columns[0].Width = 180;
 
             dgvUsers.Columns[1].HeaderText = "User Name";
-            dgvUsers.Columns[1].Width = 220;
+            dgvUsers.Columns[1].Width = 300;
 
             dgvUsers.Columns[2].HeaderText = "Role";
-            dgvUsers.Columns[2].Width = 180;
+            dgvUsers.Columns[2].Width = 200;
 
             dgvUsers.Columns[3].HeaderText = "Is Active";
-            dgvUsers.Columns[3].Width = 150;
+            dgvUsers.Columns[3].Width = 180;
 
+        }
+
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            frmAddEditUsers Users = new frmAddEditUsers();
+            Users.ShowDialog();
+            frmUserList_Load(null, null);
+        }
+
+        private void btnEditUser_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+
+            frmAddEditUsers Users = new frmAddEditUsers(UserID);
+
+            Users.ShowDialog();
+            frmUserList_Load(null, null);
+
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+            string UserName = dgvUsers.CurrentRow.Cells[1].Value.ToString();
+            DialogResult Result = MessageBox.Show(
+                $"Are you sure you want to delete User Name = " + UserName,
+                "Confirm Delete",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (Result == DialogResult.Yes)
+            {
+                if (UserBL.DeleteUser(UserID))
+                {
+                    MessageBox.Show(
+                        "User has been deleted successfully.",
+                        "Deleted",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+
+                    frmUserList_Load(null, null);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "User was not deleted because there is related data.",
+                        "Failed",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void SetActive_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+           if( UserBL.SetActive(UserID, true))
+                MessageBox.Show("Active","Done",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            frmUserList_Load(null, null);
+
+        }
+
+        private void SetNonActive_Click(object sender, EventArgs e)
+        {
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
+
+            if (UserBL.SetActive(UserID, false))
+                MessageBox.Show("NonActive", "Done", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmUserList_Load(null, null);
         }
     }
 }

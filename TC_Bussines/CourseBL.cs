@@ -187,6 +187,11 @@ namespace TC_Bussines
         {
             return EnrollmentDL.GetEnrollmentByCourseID(CourseID);
         }
+
+        public static DataTable GetCourseByEnrollment(int StudentID)
+        {
+            return CourseDL.GetCourseByEnrollment(StudentID);
+        }
             public static bool DeleteCourse(int ID, ref string ErrorMessage)
             {
             if (EnrollmentBL.IsCourseEnrolled(ID))
